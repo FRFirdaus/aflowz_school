@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="whatsapp_aflowz_school_citizen" model="ir.ui.view">
+            <field name="name">aflowz.school.citizen.form</field>
+            <field name="model">aflowz.school.citizen</field>
+            <field name="inherit_id" ref="aflowz_school.aflowz_school_citizen_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_show_raport_score']" position="after">
+                    <button name="send_msg" string="Whatsapp Message" type="object" class="oe_stat_button" icon="fa-whatsapp"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

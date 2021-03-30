@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>    
+    <record model="ir.ui.view" id="aflowz_move_class_wizard">
+        <field name="name">Move Class</field>
+        <field name="model">aflowz.class.move.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="from_class_id" readonly="1"/>
+                        <field name="to_class_id" domain = "[('id', '!=', from_class_id)]"/>
+                    </group>
+                    <group>
+                        <field name="reason"/>
+                    </group>
+                </group>
+                <field name="student_ids" domain = "[('citizen_type', '=', 'student')]">
+                    <tree>
+                        <field name="name"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button name="confirm" type="object" string="Ok" class="btn btn-primary"/>  
+                    <button string="Cancel" class="btn-default" special="cancel"/>   
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

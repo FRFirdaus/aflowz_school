@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <report
+            id="aflowz_academic_raport"
+            model="aflowz.raport.print"
+            string="Print Raport as PDF"
+            report_type="qweb-pdf"
+            name="aflowz_academic.report_academic"
+            file="aflowz_academic.report_academic"
+            print_report_name="(object._get_report_base_filename())"
+        />
+        <report
+            id="aflowz_academic_tryout"
+            model="aflowz.academic.tryout"
+            string="Print Try Out as PDF"
+            report_type="qweb-pdf"
+            name="aflowz_academic.report_tryout"
+            file="aflowz_academic.report_tryout"
+            paperformat="aflowz_academic.paper_format_tryout"
+            print_report_name="(object._get_report_tryout_base_filename())"
+        />
+        <report
+            id="aflowz_academic_tryout_with_answer"
+            model="aflowz.academic.tryout"
+            string="Print Try Out with Answer as PDF"
+            report_type="qweb-pdf"
+            name="aflowz_academic.report_tryout_with_answer"
+            file="aflowz_academic.report_tryout_with_answer"
+            paperformat="aflowz_academic.paper_format_tryout"
+            print_report_name="(object._get_report_tryout_base_filename())"
+        />
+    </data>
+</odoo>

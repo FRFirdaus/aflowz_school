@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="major_data_ipa" model="aflowz.school.major">
+        <field name="name">IPA</field>
+    </record>
+
+    <record id="major_data_ips" model="aflowz.school.major">
+        <field name="name">IPS</field>
+    </record>
+    
+    <record id="major_data_bahasa" model="aflowz.school.major">
+        <field name="name">Bahasa</field>
+    </record>
+    
+    <record id="major_data_all" model="aflowz.school.major">
+        <field name="name">All</field>
+    </record>
+</odoo>

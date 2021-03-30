@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>    
+    <record model="ir.ui.view" id="raport_print_form_wizard">
+        <field name="name">Print Raport</field>
+        <field name="model">aflowz.raport.print.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="student_id"/>
+                        <field name="major_id"/>
+                        <field name="grade_id"/>
+                        <field name="print_type" widget='radio'/>
+                    </group>
+                    <group>
+                        <field name="start_year"/>
+                        <field name="end_year"/>
+                        <field name="semester"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="confirm" type="object" string="Ok" class="btn btn-primary"/>  
+                    <button string="Cancel" class="btn-default" special="cancel"/>   
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="raport_score_form_wizard">
+        <field name="name">Score Validation</field>
+        <field name="model">aflowz.raport.score.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="address_format">
+                    <field name="zero_score_name_message" readonly="1"/>
+                </div>
+                <footer>
+                    <button name="confirm" type="object" string="Ok" class="btn btn-primary"/>  
+                    <button string="Cancel" class="btn-default" special="cancel"/>   
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

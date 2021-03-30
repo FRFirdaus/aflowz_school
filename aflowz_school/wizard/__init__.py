@@ -1,0 +1,1 @@
+from . import aflowz_class_move_wizard

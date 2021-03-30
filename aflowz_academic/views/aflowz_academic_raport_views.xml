@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aflowz_academic_raport_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_raport_tree</field>
+        <field name="model">aflowz.academic.raport</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="raport_type"/>
+                <field name="class_id"/>
+                <field name="subject_id"/>
+                <field name="curriculum_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_academic_raport_form_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_raport_form</field>
+        <field name="model">aflowz.academic.raport</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_done" string="Validate" class="btn-primary" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <button name="action_set_to_draft" string="Set to Draft" class="btn-primary" type="object" attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Task/Homework/Exam Title"/>
+                        <h1><field name="name" placeholder="Task/Homework/Exam Title"/></h1>
+                    </div>
+                    <notebook>
+                        <page string="General Informations">
+                            <group>
+                                <group>
+                                    <field name="raport_type" widget="radio" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    <field name="class_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                </group>
+                                <group>
+                                    <field name="subject_list_ids" invisible="1"/>
+                                    <field name="subject_id" attrs="{'readonly': [('state', '!=', 'draft')]}" domain="[('id', 'in', subject_list_ids)]" required="1"/>
+                                    <field name="curriculum_id" attrs="{'readonly': [('state', '!=', 'draft')]}" domain="[('subject_id', '=', subject_id)]" required="1"/>
+                                    <field name="curriculum_line_id" domain="[('curriculum_id', '=', curriculum_id)]" attrs="{'invisible' : [('raport_type', 'in', ['mid_exam', 'final_exam'])], 'required': [('raport_type', 'in', ['task', 'homework'])], 'readonly': [('state', '!=', 'draft')]}"/>
+                                    <field name="curriculum_line_ids" widget="many2many_tags" domain="[('curriculum_id', '=', curriculum_id)]" attrs="{'invisible' : [('raport_type', 'in', ['task', 'homework'])], 'required': [('raport_type', 'in', ['mid_exam', 'final_exam'])], 'readonly': [('state', '!=', 'draft')]}"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Raport Details/Scores">
+                            <field name="raport_detail_ids" context="{'default_class_id': class_id}" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                                <tree editable="bottom">
+                                    <field name="class_id" invisible="1"/>
+                                    <field name="student_id" domain="[('citizen_type', '=', 'student'), ('class_id', '=', class_id)]"/>
+                                    <field name="score"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="aflowz_academic_raport_line_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_raport_line_tree</field>
+        <field name="model">aflowz.academic.raport.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_id"/>
+                <field name="raport_id" string="Document Origin"/>
+                <field name="score"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_academic_raport_line_form_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_raport_line_form</field>
+        <field name="model">aflowz.academic.raport.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_id"/>
+                            <field name="raport_type"/>
+                            <field name="semester"/>
+                        </group>
+                        <group>
+                            <field name="score"/>
+                            <field name="start_year"/>
+                            <field name="end_year"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="General Information">
+                            <group>
+                                <group>
+                                    <field name="class_id"/>
+                                    <field name="subject_id"/>
+                                    <field name="major_id"/>
+                                </group>
+                                <group>
+                                    <field name="grade_id"/>
+                                    <field name="raport_id" string="Document Origin"/>
+                                    <field name="curriculum_line_id" attrs="{'invisible' : [('raport_type', 'in', ['mid_exam', 'final_exam'])]}"/>
+                                    <field name="curriculum_line_ids" widget="many2many_tags" attrs="{'invisible' : [('raport_type', 'in', ['task', 'homework'])]}"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="aflowz_raport_print_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_raport_print_tree</field>
+        <field name="model">aflowz.raport.print</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_id"/>
+                <field name="start_year"/>
+                <field name="end_year"/>
+                <field name="major_id"/>
+                <field name="grade_id"/>
+                <field name="semester"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_raport_print_form_view" model="ir.ui.view">
+        <field name="name">aflowz_raport_print_form</field>
+        <field name="model">aflowz.raport.print</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_done" string="Validate" class="btn-primary" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <button name="action_set_to_draft" string="Set to Draft" class="btn-primary" type="object" attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Raport Name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="student_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="start_year" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="end_year" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="print_type" widget='radio'/>
+                        </group>
+                        <group>
+                            <field name="major_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="grade_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="semester" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="General Information">
+                            <b><label style="color: #007263; padding-bottom: 0px; font-size: 16px; font-weight: 500; text-transform: uppercase;" for="" string="Scoring Percentage"/></b>
+                            <group>
+                                <group>
+                                    <field name="absence_percentage" string="Absence"/>
+                                    <field name="homework_percentage" string="Homework"/>
+                                    <field name="task_percentage" string="Task"/>
+                                </group>
+                                <group>
+                                    <field name="mid_percentage" string="Mid-Exam"/>
+                                    <field name="final_percentage" string="Final-Exam"/>
+                                </group>
+                            </group>
+                            <b><label style="color: #007263; padding-bottom: 5px; font-size: 16px; font-weight: 500; text-transform: uppercase;" for="" string="Score Details"/></b>
+                            <field name="raport_print_line_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                                <tree editable="bottom">
+                                    <field name="subject_id"/>
+                                    <field name="homework_avg_score"/>
+                                    <field name="task_avg_score"/>
+                                    <field name="mid_avg_score"/>
+                                    <field name="final_avg_score"/>
+                                    <field name="avg_score"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="total_avg_score"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="inherit_aflowz_school_citizen_form_view" model="ir.ui.view">
+		<field name="name">inherit.aflowz.school.citizen.form.view</field>
+		<field name="model">aflowz.school.citizen</field>
+		<field name="inherit_id" ref="aflowz_school.aflowz_school_citizen_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='image']" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button
+                        name="button_show_raport_score"
+                        type="object"
+                        class="oe_stat_button"
+                        attrs="{'invisible': [('citizen_type', '=', 'teacher')]}"
+                        icon="fa-list">
+                        <field name="average_score" widget="statinfo" string="Avg Score"/>
+                    </button>
+                    <button
+                        name="button_show_raport_document"
+                        type="object"
+                        class="oe_stat_button"
+                        attrs="{'invisible': [('citizen_type', '=', 'teacher')]}"
+                        icon="fa-address-book-o">
+                        <field name="raport_print_count" widget="statinfo" string="Raports"/>
+                    </button>
+                </div>
+            </xpath>
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="raport_print" string="Print Raport" class="btn-primary" type="object" attrs="{'invisible': [('citizen_type', '=', 'teacher')]}"/>
+                </header>
+            </xpath>
+		</field>
+	</record>
+
+    <record id="action_aflowz_academic_raport" model="ir.actions.act_window">
+        <field name="name">Raport</field>
+        <field name="res_model">aflowz.academic.raport</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_aflowz_academic_raport_line" model="ir.actions.act_window">
+        <field name="name">Raport Details</field>
+        <field name="res_model">aflowz.academic.raport.line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

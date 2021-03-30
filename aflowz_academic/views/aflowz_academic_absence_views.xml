@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aflowz_academic_absence_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_absence_tree</field>
+        <field name="model">aflowz.academic.absence</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="class_id"/>
+                <field name="start_year"/>
+                <field name="end_year"/>
+                <field name="semester"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_academic_absence_form_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_absence_form</field>
+        <field name="model">aflowz.academic.absence</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Absence Title"/>
+                        <h1><field name="name" placeholder="Absence Title"/></h1>
+                    </div>
+                    <notebook>
+                        <page string="General Informations">
+                            <group>
+                                <group>
+                                    <field name="class_id" required="1"/>
+                                    <field name="date"/>
+                                </group>
+                                <group>
+                                    <field name="start_year"/>
+                                    <field name="end_year"/>
+                                    <field name="semester"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Absence Details">
+                            <field name="absence_line_ids" context="{'default_class_id': class_id}">
+                                <tree editable="bottom">
+                                    <field name="class_id" invisible="1"/>
+                                    <field name="start_year" invisible="1"/>
+                                    <field name="end_year" invisible="1"/>
+                                    <field name="semester" invisible="1"/>
+                                    <field name="date" invisible="1"/>
+                                    <field name="grade_id" invisible="1"/>
+                                    <field name="major_id" invisible="1"/>
+                                    <field name="student_id" domain="[('citizen_type', '=', 'student'), ('class_id', '=', class_id)]"/>
+                                    <field name="status"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="inherit_aflowz_raport_print_form_view" model="ir.ui.view">
+		<field name="name">inherit.aflowz.raport.print.form.view</field>
+		<field name="model">aflowz.raport.print</field>
+		<field name="inherit_id" ref="aflowz_academic.aflowz_raport_print_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//notebook" position="inside">
+                <page string="Absence Information">
+                    <group>
+                        <group>
+                            <field name="present"/>
+                            <field name="sick_leave"/>
+                            <field name="permit_leave"/>
+                            <field name="alpha_leave"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='total_avg_score']" position="before">
+                <field name="present_percentage"/>
+            </xpath>
+		</field>
+	</record>
+
+    <record id="aflowz_absence_line_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_absence_line_tree</field>
+        <field name="model">aflowz.absence.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_id"/>
+                <field name="date"/>
+                <field name="class_id"/>
+                <field name="absence_id" string="Document Origin"/>
+                <field name="status"/>
+                <field name="start_year"/>
+                <field name="end_year"/>
+                <field name="semester"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_absence_line_form_view" model="ir.ui.view">
+        <field name="name">aflowz_absence_line_form</field>
+        <field name="model">aflowz.absence.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="absence_id"/>
+                            <field name="student_id"/>
+                            <field name="date"/>
+                            <field name="semester"/>
+                        </group>
+                        <group>
+                            <field name="status"/>
+                            <field name="class_id"/>
+                             <field name="grade_id"/>
+                            <field name="major_id"/>
+                            <field name="start_year"/>
+                            <field name="end_year"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="inherit_aflowz_school_citizen_absence_form_view" model="ir.ui.view">
+		<field name="name">inherit.aflowz.school.citizen.absence.form.view</field>
+		<field name="model">aflowz.school.citizen</field>
+		<field name="inherit_id" ref="aflowz_school.aflowz_school_citizen_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@class='oe_button_box']" position="inside">
+                <button
+                    name="button_show_absence_list"
+                    type="object"
+                    class="oe_stat_button"
+                    attrs="{'invisible': [('citizen_type', '=', 'teacher')]}"
+                    icon="fa-list">
+                    <field name="absence_percentage" widget="statinfo" string="Absence"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_aflowz_academic_absence" model="ir.actions.act_window">
+        <field name="name">Absence</field>
+        <field name="res_model">aflowz.academic.absence</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_aflowz_absence_line" model="ir.actions.act_window">
+        <field name="name">Absence Details</field>
+        <field name="res_model">aflowz.absence.line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

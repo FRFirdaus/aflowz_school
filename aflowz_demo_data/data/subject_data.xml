@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Subjects class 10 -->
+    <record id="subject_data_1" model="aflowz.academic.subject">
+        <field name="name">Matematika</field>
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_1'), ref('aflowz_demo_data.class_data_2'), ref('aflowz_demo_data.class_data_3'), ref('aflowz_demo_data.class_data_4')])]"/> 
+        <field name="code">MTK</field>
+    </record>
+    <record id="subject_data_2" model="aflowz.academic.subject">
+        <field name="name">Biologi</field>
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_1'), ref('aflowz_demo_data.class_data_2'), ref('aflowz_demo_data.class_data_3'), ref('aflowz_demo_data.class_data_4')])]"/> 
+        <field name="code">BIO</field>
+    </record>
+    <record id="subject_data_3" model="aflowz.academic.subject">
+        <field name="name">Kimia</field>
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_1'), ref('aflowz_demo_data.class_data_2'), ref('aflowz_demo_data.class_data_3'), ref('aflowz_demo_data.class_data_4')])]"/> 
+        <field name="code">KIM</field>
+    </record>
+    <record id="subject_data_4" model="aflowz.academic.subject">
+        <field name="name">Fisika</field>
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_1'), ref('aflowz_demo_data.class_data_2'), ref('aflowz_demo_data.class_data_3'), ref('aflowz_demo_data.class_data_4')])]"/> 
+        <field name="code">FIS</field>
+    </record>
+    <record id="subject_data_5" model="aflowz.academic.subject">
+        <field name="name">Geografi</field>
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_1'), ref('aflowz_demo_data.class_data_2'), ref('aflowz_demo_data.class_data_3'), ref('aflowz_demo_data.class_data_4')])]"/> 
+        <field name="code">GEO</field>
+    </record>
+    <record id="subject_data_6" model="aflowz.academic.subject">
+        <field name="name">Sosiologi</field>
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_1'), ref('aflowz_demo_data.class_data_2'), ref('aflowz_demo_data.class_data_3'), ref('aflowz_demo_data.class_data_4')])]"/> 
+        <field name="code">SOS</field>
+    </record>
+    <record id="subject_data_7" model="aflowz.academic.subject">
+        <field name="name">History</field>
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_1'), ref('aflowz_demo_data.class_data_2'), ref('aflowz_demo_data.class_data_3'), ref('aflowz_demo_data.class_data_4')])]"/> 
+        <field name="code">HIS</field>
+    </record>
+    <record id="subject_data_8" model="aflowz.academic.subject">
+        <field name="name">Islamic Religion</field>
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_1'), ref('aflowz_demo_data.class_data_2'), ref('aflowz_demo_data.class_data_3'), ref('aflowz_demo_data.class_data_4')])]"/> 
+        <field name="code">ISLRELG</field>
+    </record>
+
+    <!-- Subjects class 11 IPA -->
+    <record id="subject_data_9" model="aflowz.academic.subject">
+        <field name="name">Matematika</field>
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xi"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_5'), ref('aflowz_demo_data.class_data_6')])]"/>
+        <field name="code">MTK</field>
+    </record>
+    <record id="subject_data_10" model="aflowz.academic.subject">
+        <field name="name">Biologi</field>
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xi"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_5'), ref('aflowz_demo_data.class_data_6')])]"/>
+        <field name="code">BIO</field>
+    </record>
+    <record id="subject_data_11" model="aflowz.academic.subject">
+        <field name="name">Kimia</field>
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xi"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_5'), ref('aflowz_demo_data.class_data_6')])]"/>
+        <field name="code">KIM</field>
+    </record>
+    <record id="subject_data_12" model="aflowz.academic.subject">
+        <field name="name">Fisika</field>
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xi"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_5'), ref('aflowz_demo_data.class_data_6')])]"/>
+        <field name="code">FIS</field>
+    </record>
+
+    <!-- Subjects class 11 IPS -->
+    <record id="subject_data_13" model="aflowz.academic.subject">
+        <field name="name">Geografi</field>
+        <field name="major_id" ref="major_data_ips"/>
+        <field name="grade_id" ref="grade_data_xi"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_7'), ref('aflowz_demo_data.class_data_8')])]"/>
+        <field name="code">GEO</field>
+    </record>
+    <record id="subject_data_14" model="aflowz.academic.subject">
+        <field name="name">Sosiologi</field>
+        <field name="major_id" ref="major_data_ips"/>
+        <field name="grade_id" ref="grade_data_xi"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_7'), ref('aflowz_demo_data.class_data_8')])]"/>
+        <field name="code">SOS</field>
+    </record>
+    <record id="subject_data_15" model="aflowz.academic.subject">
+        <field name="name">History</field>
+        <field name="major_id" ref="major_data_ips"/>
+        <field name="grade_id" ref="grade_data_xi"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_7'), ref('aflowz_demo_data.class_data_8')])]"/>
+        <field name="code">HIS</field>
+    </record>
+
+    <!-- Subjects class 12 IPA -->
+    <record id="subject_data_16" model="aflowz.academic.subject">
+        <field name="name">Matematika</field>
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xii"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_9'), ref('aflowz_demo_data.class_data_10')])]"/>
+        <field name="code">MTK</field>
+    </record>
+    <record id="subject_data_17" model="aflowz.academic.subject">
+        <field name="name">Biologi</field>
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xii"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_9'), ref('aflowz_demo_data.class_data_10')])]"/>
+        <field name="code">BIO</field>
+    </record>
+    <record id="subject_data_18" model="aflowz.academic.subject">
+        <field name="name">Kimia</field>
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xii"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_9'), ref('aflowz_demo_data.class_data_10')])]"/>
+        <field name="code">KIM</field>
+    </record>
+    <record id="subject_data_19" model="aflowz.academic.subject">
+        <field name="name">Fisika</field>
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xii"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_9'), ref('aflowz_demo_data.class_data_10')])]"/>
+        <field name="code">FIS</field>
+    </record>
+
+    <!-- Subjects class 12 IPS -->
+    <record id="subject_data_20" model="aflowz.academic.subject">
+        <field name="name">Geografi</field>
+        <field name="major_id" ref="major_data_ips"/>
+        <field name="grade_id" ref="grade_data_xii"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_11'), ref('aflowz_demo_data.class_data_12')])]"/>
+        <field name="code">GEO</field>
+    </record>
+    <record id="subject_data_21" model="aflowz.academic.subject">
+        <field name="name">Sosiologi</field>
+        <field name="major_id" ref="major_data_ips"/>
+        <field name="grade_id" ref="grade_data_xii"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_11'), ref('aflowz_demo_data.class_data_12')])]"/>
+        <field name="code">SOS</field>
+    </record>
+    <record id="subject_data_22" model="aflowz.academic.subject">
+        <field name="name">History</field>
+        <field name="major_id" ref="major_data_ips"/>
+        <field name="grade_id" ref="grade_data_xii"/>
+        <field name="class_ids" eval="[(6,0,[ref('aflowz_demo_data.class_data_11'), ref('aflowz_demo_data.class_data_12')])]"/>
+        <field name="code">HIS</field>
+    </record>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.module.category" id="aflowz_academic_groups">
+        <field name="name">Academic Group</field>
+        <field name="description">Access Right Aflows Academic</field>
+    </record>
+
+    <!-- Aflowz Academic Groups -->
+    <record id="group_aflowz_academic_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="aflowz_academic_groups"/>
+        <field name="comment">The user will have access to aflowz academic.</field>
+    </record>
+</odoo>

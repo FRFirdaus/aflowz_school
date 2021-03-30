@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="teacher_data_1" model="aflowz.school.citizen">
+        <field name="name">Nur Mahmudah</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1995-08-25</field>
+        <field name="mobile">+6281394033511</field>
+        <field name="email">nur.mahmudah@gmail.com</field>
+    </record>
+    <record id="teacher_data_2" model="aflowz.school.citizen">
+        <field name="name">Siti Maemunah</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1994-06-08</field>
+        <field name="mobile">+6281396013711</field>
+        <field name="email">maemunah@gmail.com</field>
+    </record>
+    <record id="teacher_data_3" model="aflowz.school.citizen">
+        <field name="name">Bambang Hartono</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Semarang</field>
+        <field name="birth_date">1995-04-24</field>
+        <field name="mobile">+6281391336813</field>
+        <field name="email">bambang.hartono@gmail.com</field>
+    </record>
+    <record id="teacher_data_4" model="aflowz.school.citizen">
+        <field name="name">Syarif Hidayatullah</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1992-03-09</field>
+        <field name="mobile">+6287794065522</field>
+        <field name="email">syarif@gmail.com</field>
+    </record>
+    <record id="teacher_data_5" model="aflowz.school.citizen">
+        <field name="name">Firman Abdul Khalik</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1990-09-29</field>
+        <field name="mobile">+6281257033573</field>
+        <field name="email">firman@gmail.com</field>
+    </record>
+    <record id="teacher_data_6" model="aflowz.school.citizen">
+        <field name="name">Rahmat Hidayat</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1992-07-14</field>
+        <field name="mobile">+6281394763454</field>
+        <field name="email">rahmat.hidayat@gmail.com</field>
+    </record>
+    <record id="teacher_data_7" model="aflowz.school.citizen">
+        <field name="name">Anwar Fadillah</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Depok</field>
+        <field name="birth_date">1993-10-19</field>
+        <field name="mobile">+6281394712255</field>
+        <field name="email">anwar.fadillah@gmail.com</field>
+    </record>
+    <record id="teacher_data_8" model="aflowz.school.citizen">
+        <field name="name">Rizal Rusjdi</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1989-05-21</field>
+        <field name="mobile">+6281351431467</field>
+        <field name="email">rizal.r@gmail.com</field>
+    </record>
+    <record id="teacher_data_9" model="aflowz.school.citizen">
+        <field name="name">Teguh Ramdhani</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1994-01-02</field>
+        <field name="mobile">+6287789988301</field>
+        <field name="email">teguh.ramdhani@gmail.com</field>
+    </record>
+    <record id="teacher_data_10" model="aflowz.school.citizen">
+        <field name="name">Faris Dinar</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-12-10</field>
+        <field name="mobile">+6285681239512</field>
+        <field name="email">faris.dinar@gmail.com</field>
+    </record>
+    <record id="teacher_data_11" model="aflowz.school.citizen">
+        <field name="name">Riris firdaus</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Tegal</field>
+        <field name="birth_date">1995-11-15</field>
+        <field name="mobile">+6285678899314</field>
+        <field name="email">riris@gmail.com</field>
+    </record>
+    <record id="teacher_data_12" model="aflowz.school.citizen">
+        <field name="name">Melly Kurnia</field>
+        <field name="citizen_type">teacher</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1994-06-01</field>
+        <field name="mobile">+6285698883123</field>
+        <field name="email">melly.kurnia@gmail.com</field>
+    </record>
+</odoo>

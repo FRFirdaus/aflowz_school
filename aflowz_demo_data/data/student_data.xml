@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- student class 10 -->
+    <record id="student_data_1" model="aflowz.school.citizen">
+        <field name="name">Fahmi</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-01-01</field>
+        <field name="mobile">+6281300000001</field>
+        <field name="email">fahmi@gmail.com</field>
+        <field name="class_id" ref="class_data_1"/>
+    </record>
+    <record id="student_data_2" model="aflowz.school.citizen">
+        <field name="name">Rehan</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-02</field>
+        <field name="mobile">+6281300000002</field>
+        <field name="email">rehan@gmail.com</field>
+        <field name="class_id" ref="class_data_1"/>
+    </record>
+    <record id="student_data_3" model="aflowz.school.citizen">
+        <field name="name">Firdaus</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Semarang</field>
+        <field name="birth_date">1996-01-03</field>
+        <field name="mobile">+6281300000003</field>
+        <field name="email">firdaus@gmail.com</field>
+        <field name="class_id" ref="class_data_1"/>
+    </record>
+    <record id="student_data_4" model="aflowz.school.citizen">
+        <field name="name">Najib</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-01-04</field>
+        <field name="mobile">+6281300000004</field>
+        <field name="email">najib@gmail.com</field>
+        <field name="class_id" ref="class_data_1"/>
+    </record>
+    <record id="student_data_5" model="aflowz.school.citizen">
+        <field name="name">Arif</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-01-05</field>
+        <field name="mobile">+6281300000005</field>
+        <field name="email">arif@gmail.com</field>
+        <field name="class_id" ref="class_data_1"/>
+    </record>
+    <record id="student_data_6" model="aflowz.school.citizen">
+        <field name="name">Tifatul</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-01-06</field>
+        <field name="mobile">+6281300000006</field>
+        <field name="email">tifatul@gmail.com</field>
+        <field name="class_id" ref="class_data_1"/>
+    </record>
+    <record id="student_data_7" model="aflowz.school.citizen">
+        <field name="name">Sidik</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Depok</field>
+        <field name="birth_date">1996-01-07</field>
+        <field name="mobile">+6281300000007</field>
+        <field name="email">sidik@gmail.com</field>
+        <field name="class_id" ref="class_data_1"/>
+    </record>
+    <record id="student_data_8" model="aflowz.school.citizen">
+        <field name="name">Malik</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-01-08</field>
+        <field name="mobile">+6281300000008</field>
+        <field name="email">malik@gmail.com</field>
+        <field name="class_id" ref="class_data_1"/>
+    </record>
+    <record id="student_data_9" model="aflowz.school.citizen">
+        <field name="name">Khoirul</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-01-09</field>
+        <field name="mobile">+6281300000009</field>
+        <field name="email">khoirul@gmail.com</field>
+        <field name="class_id" ref="class_data_1"/>
+    </record>
+    <record id="student_data_10" model="aflowz.school.citizen">
+        <field name="name">Amir</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-01-10</field>
+        <field name="mobile">+6281300000010</field>
+        <field name="email">amir@gmail.com</field>
+        <field name="class_id" ref="class_data_1"/>
+    </record>
+    <record id="student_data_11" model="aflowz.school.citizen">
+        <field name="name">Salsa</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Tegal</field>
+        <field name="birth_date">1996-01-11</field>
+        <field name="mobile">+6281300000011</field>
+        <field name="email">salsa@gmail.com</field>
+        <field name="class_id" ref="class_data_2"/>
+    </record>
+    <record id="student_data_12" model="aflowz.school.citizen">
+        <field name="name">Mega</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-12</field>
+        <field name="mobile">+6281300000012</field>
+        <field name="email">mega@gmail.com</field>
+        <field name="class_id" ref="class_data_2"/>
+    </record>
+    <record id="student_data_13" model="aflowz.school.citizen">
+        <field name="name">Iskanti</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-13</field>
+        <field name="mobile">+6281300000013</field>
+        <field name="email">iskanti@gmail.com</field>
+        <field name="class_id" ref="class_data_2"/>
+    </record>
+    <record id="student_data_14" model="aflowz.school.citizen">
+        <field name="name">Antin</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-14</field>
+        <field name="mobile">+6281300000014</field>
+        <field name="email">Antin@gmail.com</field>
+        <field name="class_id" ref="class_data_2"/>
+    </record>
+    <record id="student_data_15" model="aflowz.school.citizen">
+        <field name="name">Rahma</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-15</field>
+        <field name="mobile">+6281300000015</field>
+        <field name="email">rahma@gmail.com</field>
+        <field name="class_id" ref="class_data_2"/>
+    </record>
+    <record id="student_data_16" model="aflowz.school.citizen">
+        <field name="name">Hanifah</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-16</field>
+        <field name="mobile">+6281300000016</field>
+        <field name="email">hanifah@gmail.com</field>
+        <field name="class_id" ref="class_data_2"/>
+    </record>
+    <record id="student_data_17" model="aflowz.school.citizen">
+        <field name="name">Syeillah</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-17</field>
+        <field name="mobile">+6281300000017</field>
+        <field name="email">syeillah@gmail.com</field>
+        <field name="class_id" ref="class_data_2"/>
+    </record>
+    <record id="student_data_18" model="aflowz.school.citizen">
+        <field name="name">Mitha</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-18</field>
+        <field name="mobile">+6281300000018</field>
+        <field name="email">mitha@gmail.com</field>
+        <field name="class_id" ref="class_data_2"/>
+    </record>
+    <record id="student_data_19" model="aflowz.school.citizen">
+        <field name="name">Merry</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-19</field>
+        <field name="mobile">+6281300000019</field>
+        <field name="email">merry@gmail.com</field>
+        <field name="class_id" ref="class_data_2"/>
+    </record>
+    <record id="student_data_20" model="aflowz.school.citizen">
+        <field name="name">Karina</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-20</field>
+        <field name="mobile">+6281300000020</field>
+        <field name="email">karina@gmail.com</field>
+        <field name="class_id" ref="class_data_2"/>
+    </record>
+    <record id="student_data_21" model="aflowz.school.citizen">
+        <field name="name">Pamungkas</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-21</field>
+        <field name="mobile">+6281300000021</field>
+        <field name="email">pamungkas@gmail.com</field>
+        <field name="class_id" ref="class_data_3"/>
+    </record>
+    <record id="student_data_22" model="aflowz.school.citizen">
+        <field name="name">Darius</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-22</field>
+        <field name="mobile">+6281300000022</field>
+        <field name="email">darius@gmail.com</field>
+        <field name="class_id" ref="class_data_3"/>
+    </record>
+    <record id="student_data_23" model="aflowz.school.citizen">
+        <field name="name">Hilman</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-01-23</field>
+        <field name="mobile">+6281300000023</field>
+        <field name="email">hilman@gmail.com</field>
+        <field name="class_id" ref="class_data_3"/>
+    </record>
+    <record id="student_data_24" model="aflowz.school.citizen">
+        <field name="name">Hendrik</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-24</field>
+        <field name="mobile">+6281300000024</field>
+        <field name="email">hendrik@gmail.com</field>
+        <field name="class_id" ref="class_data_3"/>
+    </record>
+    <record id="student_data_25" model="aflowz.school.citizen">
+        <field name="name">Reza</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-25</field>
+        <field name="mobile">+6281300000025</field>
+        <field name="email">reza@gmail.com</field>
+        <field name="class_id" ref="class_data_3"/>
+    </record>
+    <record id="student_data_26" model="aflowz.school.citizen">
+        <field name="name">Kemal</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-26</field>
+        <field name="mobile">+6281300000026</field>
+        <field name="email">kemal@gmail.com</field>
+        <field name="class_id" ref="class_data_3"/>
+    </record>
+    <record id="student_data_27" model="aflowz.school.citizen">
+        <field name="name">Habibi</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-27</field>
+        <field name="mobile">+6281300000027</field>
+        <field name="email">habibi@gmail.com</field>
+        <field name="class_id" ref="class_data_3"/>
+    </record>
+    <record id="student_data_28" model="aflowz.school.citizen">
+        <field name="name">Dika</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-28</field>
+        <field name="mobile">+6281300000028</field>
+        <field name="email">dika@gmail.com</field>
+        <field name="class_id" ref="class_data_3"/>
+    </record>
+    <record id="student_data_29" model="aflowz.school.citizen">
+        <field name="name">Adam</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-29</field>
+        <field name="mobile">+6281300000029</field>
+        <field name="email">adam@gmail.com</field>
+        <field name="class_id" ref="class_data_3"/>
+    </record>
+    <record id="student_data_30" model="aflowz.school.citizen">
+        <field name="name">Idrus</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-01-30</field>
+        <field name="mobile">+6281300000030</field>
+        <field name="email">idrus@gmail.com</field>
+        <field name="class_id" ref="class_data_3"/>
+    </record>
+    <record id="student_data_31" model="aflowz.school.citizen">
+        <field name="name">Tina</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-01</field>
+        <field name="mobile">+6281300000031</field>
+        <field name="email">tina@gmail.com</field>
+        <field name="class_id" ref="class_data_4"/>
+    </record>
+    <record id="student_data_32" model="aflowz.school.citizen">
+        <field name="name">Mimi</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-02</field>
+        <field name="mobile">+6281300000032</field>
+        <field name="email">mimi@gmail.com</field>
+        <field name="class_id" ref="class_data_4"/>
+    </record>
+    <record id="student_data_33" model="aflowz.school.citizen">
+        <field name="name">Tika</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-03</field>
+        <field name="mobile">+6281300000033</field>
+        <field name="email">tika@gmail.com</field>
+        <field name="class_id" ref="class_data_4"/>
+    </record>
+    <record id="student_data_34" model="aflowz.school.citizen">
+        <field name="name">khalisa</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-04</field>
+        <field name="mobile">+6281300000034</field>
+        <field name="email">khalisa@gmail.com</field>
+        <field name="class_id" ref="class_data_4"/>
+    </record>
+    <record id="student_data_35" model="aflowz.school.citizen">
+        <field name="name">Azrina</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-05</field>
+        <field name="mobile">+6281300000035</field>
+        <field name="email">azrina@gmail.com</field>
+        <field name="class_id" ref="class_data_4"/>
+    </record>
+    <record id="student_data_36" model="aflowz.school.citizen">
+        <field name="name">Najwa</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-06</field>
+        <field name="mobile">+6281300000036</field>
+        <field name="email">najwa@gmail.com</field>
+        <field name="class_id" ref="class_data_4"/>
+    </record>
+    <record id="student_data_37" model="aflowz.school.citizen">
+        <field name="name">Farah</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-07</field>
+        <field name="mobile">+6281300000037</field>
+        <field name="email">farah@gmail.com</field>
+        <field name="class_id" ref="class_data_4"/>
+    </record>
+    <record id="student_data_38" model="aflowz.school.citizen">
+        <field name="name">Faizah</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-08</field>
+        <field name="mobile">+6281300000038</field>
+        <field name="email">faizah@gmail.com</field>
+        <field name="class_id" ref="class_data_4"/>
+    </record>
+    <record id="student_data_39" model="aflowz.school.citizen">
+        <field name="name">Kinasih</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-09</field>
+        <field name="mobile">+6281300000039</field>
+        <field name="email">kinasih@gmail.com</field>
+        <field name="class_id" ref="class_data_4"/>
+    </record>
+    <record id="student_data_40" model="aflowz.school.citizen">
+        <field name="name">Kinanti</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-10</field>
+        <field name="mobile">+6281300000040</field>
+        <field name="email">kinasih@gmail.com</field>
+        <field name="class_id" ref="class_data_4"/>
+    </record>
+
+    <!-- student class 11 -->
+    <record id="student_data_41" model="aflowz.school.citizen">
+        <field name="name">Ayus</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-11</field>
+        <field name="mobile">+6281300000041</field>
+        <field name="email">ayus@gmail.com</field>
+        <field name="class_id" ref="class_data_5"/>
+    </record>
+    <record id="student_data_42" model="aflowz.school.citizen">
+        <field name="name">Abi</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-12</field>
+        <field name="mobile">+6281300000042</field>
+        <field name="email">abi@gmail.com</field>
+        <field name="class_id" ref="class_data_5"/>
+    </record>
+    <record id="student_data_43" model="aflowz.school.citizen">
+        <field name="name">Tirta</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Semarang</field>
+        <field name="birth_date">1996-02-13</field>
+        <field name="mobile">+6281300000043</field>
+        <field name="email">tirta@gmail.com</field>
+        <field name="class_id" ref="class_data_5"/>
+    </record>
+    <record id="student_data_44" model="aflowz.school.citizen">
+        <field name="name">Syanmil</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-14</field>
+        <field name="mobile">+6281300000044</field>
+        <field name="email">syanmil@gmail.com</field>
+        <field name="class_id" ref="class_data_5"/>
+    </record>
+    <record id="student_data_45" model="aflowz.school.citizen">
+        <field name="name">Hafizh</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-15</field>
+        <field name="mobile">+6281300000045</field>
+        <field name="email">hafizh@gmail.com</field>
+        <field name="class_id" ref="class_data_5"/>
+    </record>
+    <record id="student_data_46" model="aflowz.school.citizen">
+        <field name="name">Dani</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-16</field>
+        <field name="mobile">+6281300000046</field>
+        <field name="email">dani@gmail.com</field>
+        <field name="class_id" ref="class_data_5"/>
+    </record>
+    <record id="student_data_47" model="aflowz.school.citizen">
+        <field name="name">Banu</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Depok</field>
+        <field name="birth_date">1996-02-17</field>
+        <field name="mobile">+6281300000047</field>
+        <field name="email">banu@gmail.com</field>
+        <field name="class_id" ref="class_data_5"/>
+    </record>
+    <record id="student_data_48" model="aflowz.school.citizen">
+        <field name="name">Lucky</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-18</field>
+        <field name="mobile">+6281300000048</field>
+        <field name="email">lucky@gmail.com</field>
+        <field name="class_id" ref="class_data_5"/>
+    </record>
+    <record id="student_data_49" model="aflowz.school.citizen">
+        <field name="name">Ali</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-19</field>
+        <field name="mobile">+6281300000049</field>
+        <field name="email">ali@gmail.com</field>
+        <field name="class_id" ref="class_data_5"/>
+    </record>
+    <record id="student_data_50" model="aflowz.school.citizen">
+        <field name="name">Fakhri</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-20</field>
+        <field name="mobile">+6281300000050</field>
+        <field name="email">fakhri@gmail.com</field>
+        <field name="class_id" ref="class_data_5"/>
+    </record>
+    <record id="student_data_51" model="aflowz.school.citizen">
+        <field name="name">Annisa</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Tegal</field>
+        <field name="birth_date">1996-02-21</field>
+        <field name="mobile">+6281300000051</field>
+        <field name="email">annisa@gmail.com</field>
+        <field name="class_id" ref="class_data_6"/>
+    </record>
+    <record id="student_data_52" model="aflowz.school.citizen">
+        <field name="name">Khairunisa</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-22</field>
+        <field name="mobile">+6281300000052</field>
+        <field name="email">khairunisa@gmail.com</field>
+        <field name="class_id" ref="class_data_6"/>
+    </record>
+    <record id="student_data_53" model="aflowz.school.citizen">
+        <field name="name">Icha</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-23</field>
+        <field name="mobile">+6281300000053</field>
+        <field name="email">icha@gmail.com</field>
+        <field name="class_id" ref="class_data_6"/>
+    </record>
+    <record id="student_data_54" model="aflowz.school.citizen">
+        <field name="name">Yasmin</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-24</field>
+        <field name="mobile">+6281300000054</field>
+        <field name="email">yasmin@gmail.com</field>
+        <field name="class_id" ref="class_data_6"/>
+    </record>
+    <record id="student_data_55" model="aflowz.school.citizen">
+        <field name="name">Yaumil</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-25</field>
+        <field name="mobile">+6281300000055</field>
+        <field name="email">yaumil@gmail.com</field>
+        <field name="class_id" ref="class_data_6"/>
+    </record>
+    <record id="student_data_56" model="aflowz.school.citizen">
+        <field name="name">Fitri</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-26</field>
+        <field name="mobile">+6281300000056</field>
+        <field name="email">fitri@gmail.com</field>
+        <field name="class_id" ref="class_data_6"/>
+    </record>
+    <record id="student_data_57" model="aflowz.school.citizen">
+        <field name="name">Aisyah</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-17</field>
+        <field name="mobile">+6281300000057</field>
+        <field name="email">aisyah@gmail.com</field>
+        <field name="class_id" ref="class_data_6"/>
+    </record>
+    <record id="student_data_58" model="aflowz.school.citizen">
+        <field name="name">Fathia</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-28</field>
+        <field name="mobile">+6281300000058</field>
+        <field name="email">mitha@gmail.com</field>
+        <field name="class_id" ref="class_data_6"/>
+    </record>
+    <record id="student_data_59" model="aflowz.school.citizen">
+        <field name="name">Zahra</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-01</field>
+        <field name="mobile">+6281300000059</field>
+        <field name="email">zahra@gmail.com</field>
+        <field name="class_id" ref="class_data_6"/>
+    </record>
+    <record id="student_data_60" model="aflowz.school.citizen">
+        <field name="name">Alya</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-02</field>
+        <field name="mobile">+6281300000060</field>
+        <field name="email">Alya@gmail.com</field>
+        <field name="class_id" ref="class_data_6"/>
+    </record>
+    <record id="student_data_61" model="aflowz.school.citizen">
+        <field name="name">Chafidz</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-03</field>
+        <field name="mobile">+6281300000061</field>
+        <field name="email">chafidz@gmail.com</field>
+        <field name="class_id" ref="class_data_7"/>
+    </record>
+    <record id="student_data_62" model="aflowz.school.citizen">
+        <field name="name">Maulana</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-04</field>
+        <field name="mobile">+6281300000062</field>
+        <field name="email">maulana@gmail.com</field>
+        <field name="class_id" ref="class_data_7"/>
+    </record>
+    <record id="student_data_63" model="aflowz.school.citizen">
+        <field name="name">Bagus</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-03-04</field>
+        <field name="mobile">+6281300000063</field>
+        <field name="email">hilman@gmail.com</field>
+        <field name="class_id" ref="class_data_7"/>
+    </record>
+    <record id="student_data_64" model="aflowz.school.citizen">
+        <field name="name">Fikri</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-05</field>
+        <field name="mobile">+6281300000064</field>
+        <field name="email">fikri@gmail.com</field>
+        <field name="class_id" ref="class_data_7"/>
+    </record>
+    <record id="student_data_65" model="aflowz.school.citizen">
+        <field name="name">Gusman</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-06</field>
+        <field name="mobile">+6281300000065</field>
+        <field name="email">fikri@gmail.com</field>
+        <field name="class_id" ref="class_data_7"/>
+    </record>
+    <record id="student_data_66" model="aflowz.school.citizen">
+        <field name="name">Ismail</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-07</field>
+        <field name="mobile">+6281300000066</field>
+        <field name="email">ismail@gmail.com</field>
+        <field name="class_id" ref="class_data_7"/>
+    </record>
+    <record id="student_data_67" model="aflowz.school.citizen">
+        <field name="name">Chakra</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-08</field>
+        <field name="mobile">+6281300000067</field>
+        <field name="email">chakra@gmail.com</field>
+        <field name="class_id" ref="class_data_7"/>
+    </record>
+    <record id="student_data_68" model="aflowz.school.citizen">
+        <field name="name">Salman</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-09</field>
+        <field name="mobile">+6281300000068</field>
+        <field name="email">salman@gmail.com</field>
+        <field name="class_id" ref="class_data_7"/>
+    </record>
+    <record id="student_data_69" model="aflowz.school.citizen">
+        <field name="name">Wijaya</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-10</field>
+        <field name="mobile">+6281300000069</field>
+        <field name="email">wijaya@gmail.com</field>
+        <field name="class_id" ref="class_data_7"/>
+    </record>
+    <record id="student_data_70" model="aflowz.school.citizen">
+        <field name="name">Miftah</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-11</field>
+        <field name="mobile">+6281300000070</field>
+        <field name="email">miftah@gmail.com</field>
+        <field name="class_id" ref="class_data_7"/>
+    </record>
+    <record id="student_data_71" model="aflowz.school.citizen">
+        <field name="name">Dinar</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-12</field>
+        <field name="mobile">+6281300000071</field>
+        <field name="email">dinar@gmail.com</field>
+        <field name="class_id" ref="class_data_8"/>
+    </record>
+    <record id="student_data_72" model="aflowz.school.citizen">
+        <field name="name">Chika</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-13</field>
+        <field name="mobile">+6281300000072</field>
+        <field name="email">chika@gmail.com</field>
+        <field name="class_id" ref="class_data_8"/>
+    </record>
+    <record id="student_data_73" model="aflowz.school.citizen">
+        <field name="name">Chita</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-14</field>
+        <field name="mobile">+6281300000073</field>
+        <field name="email">chita@gmail.com</field>
+        <field name="class_id" ref="class_data_8"/>
+    </record>
+    <record id="student_data_74" model="aflowz.school.citizen">
+        <field name="name">Aida</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-15</field>
+        <field name="mobile">+6281300000074</field>
+        <field name="email">aida@gmail.com</field>
+        <field name="class_id" ref="class_data_8"/>
+    </record>
+    <record id="student_data_75" model="aflowz.school.citizen">
+        <field name="name">Ulfa</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-15</field>
+        <field name="mobile">+6281300000075</field>
+        <field name="email">ulfa@gmail.com</field>
+        <field name="class_id" ref="class_data_8"/>
+    </record>
+    <record id="student_data_76" model="aflowz.school.citizen">
+        <field name="name">Maria</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-16</field>
+        <field name="mobile">+6281300000076</field>
+        <field name="email">ulfa@gmail.com</field>
+        <field name="class_id" ref="class_data_8"/>
+    </record>
+    <record id="student_data_77" model="aflowz.school.citizen">
+        <field name="name">Shalihah</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-17</field>
+        <field name="mobile">+6281300000077</field>
+        <field name="email">shalihah@gmail.com</field>
+        <field name="class_id" ref="class_data_8"/>
+    </record>
+    <record id="student_data_78" model="aflowz.school.citizen">
+        <field name="name">fithriah</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-18</field>
+        <field name="mobile">+6281300000078</field>
+        <field name="email">fitri@gmail.com</field>
+        <field name="class_id" ref="class_data_8"/>
+    </record>
+    <record id="student_data_79" model="aflowz.school.citizen">
+        <field name="name">Jessica</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-19</field>
+        <field name="mobile">+6281300000079</field>
+        <field name="email">jessica@gmail.com</field>
+        <field name="class_id" ref="class_data_8"/>
+    </record>
+    <record id="student_data_80" model="aflowz.school.citizen">
+        <field name="name">Zuraina</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-20</field>
+        <field name="mobile">+6281300000080</field>
+        <field name="email">zuraina@gmail.com</field>
+        <field name="class_id" ref="class_data_8"/>
+    </record>
+
+    <!-- student class 12 -->
+    <record id="student_data_81" model="aflowz.school.citizen">
+        <field name="name">Falih</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-03-21</field>
+        <field name="mobile">+6281300000081</field>
+        <field name="email">falih@gmail.com</field>
+        <field name="class_id" ref="class_data_9"/>
+    </record>
+    <record id="student_data_82" model="aflowz.school.citizen">
+        <field name="name">Galih</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-22</field>
+        <field name="mobile">+6281300000082</field>
+        <field name="email">galih@gmail.com</field>
+        <field name="class_id" ref="class_data_9"/>
+    </record>
+    <record id="student_data_83" model="aflowz.school.citizen">
+        <field name="name">Yusuf</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Semarang</field>
+        <field name="birth_date">1996-03-23</field>
+        <field name="mobile">+6281300000083</field>
+        <field name="email">yusuf@gmail.com</field>
+        <field name="class_id" ref="class_data_9"/>
+    </record>
+    <record id="student_data_84" model="aflowz.school.citizen">
+        <field name="name">Yanto</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-03-24</field>
+        <field name="mobile">+6281300000084</field>
+        <field name="email">yanto@gmail.com</field>
+        <field name="class_id" ref="class_data_9"/>
+    </record>
+    <record id="student_data_85" model="aflowz.school.citizen">
+        <field name="name">Ghifar</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-15</field>
+        <field name="mobile">+6281300000045</field>
+        <field name="email">ghifar@gmail.com</field>
+        <field name="class_id" ref="class_data_9"/>
+    </record>
+    <record id="student_data_86" model="aflowz.school.citizen">
+        <field name="name">Yongki</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-16</field>
+        <field name="mobile">+6281300000086</field>
+        <field name="email">yongki@gmail.com</field>
+        <field name="class_id" ref="class_data_9"/>
+    </record>
+    <record id="student_data_87" model="aflowz.school.citizen">
+        <field name="name">Mufti</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Depok</field>
+        <field name="birth_date">1996-02-17</field>
+        <field name="mobile">+6281300000087</field>
+        <field name="email">mufti@gmail.com</field>
+        <field name="class_id" ref="class_data_9"/>
+    </record>
+    <record id="student_data_88" model="aflowz.school.citizen">
+        <field name="name">Aulia</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-18</field>
+        <field name="mobile">+6281300000088</field>
+        <field name="email">aulia@gmail.com</field>
+        <field name="class_id" ref="class_data_9"/>
+    </record>
+    <record id="student_data_89" model="aflowz.school.citizen">
+        <field name="name">Keanu</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-19</field>
+        <field name="mobile">+6281300000089</field>
+        <field name="email">keanu@gmail.com</field>
+        <field name="class_id" ref="class_data_9"/>
+    </record>
+    <record id="student_data_90" model="aflowz.school.citizen">
+        <field name="name">Rizki</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-02-20</field>
+        <field name="mobile">+6281300000090</field>
+        <field name="email">rizki@gmail.com</field>
+        <field name="class_id" ref="class_data_9"/>
+    </record>
+    <record id="student_data_91" model="aflowz.school.citizen">
+        <field name="name">Nabila</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Tegal</field>
+        <field name="birth_date">1996-02-21</field>
+        <field name="mobile">+6281300000091</field>
+        <field name="email">nabila@gmail.com</field>
+        <field name="class_id" ref="class_data_10"/>
+    </record>
+    <record id="student_data_92" model="aflowz.school.citizen">
+        <field name="name">Syahla</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-22</field>
+        <field name="mobile">+6281300000092</field>
+        <field name="email">syahla@gmail.com</field>
+        <field name="class_id" ref="class_data_10"/>
+    </record>
+    <record id="student_data_93" model="aflowz.school.citizen">
+        <field name="name">Hana</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-23</field>
+        <field name="mobile">+6281300000093</field>
+        <field name="email">Hana@gmail.com</field>
+        <field name="class_id" ref="class_data_10"/>
+    </record>
+    <record id="student_data_94" model="aflowz.school.citizen">
+        <field name="name">Hani</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-24</field>
+        <field name="mobile">+6281300000094</field>
+        <field name="email">hani@gmail.com</field>
+        <field name="class_id" ref="class_data_10"/>
+    </record>
+    <record id="student_data_95" model="aflowz.school.citizen">
+        <field name="name">Jeihan</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-25</field>
+        <field name="mobile">+6281300000095</field>
+        <field name="email">jeihan@gmail.com</field>
+        <field name="class_id" ref="class_data_10"/>
+    </record>
+    <record id="student_data_96" model="aflowz.school.citizen">
+        <field name="name">Rafika</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-26</field>
+        <field name="mobile">+6281300000096</field>
+        <field name="email">rafika@gmail.com</field>
+        <field name="class_id" ref="class_data_10"/>
+    </record>
+    <record id="student_data_97" model="aflowz.school.citizen">
+        <field name="name">Rifkah</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-17</field>
+        <field name="mobile">+6281300000097</field>
+        <field name="email">rifkah@gmail.com</field>
+        <field name="class_id" ref="class_data_10"/>
+    </record>
+    <record id="student_data_98" model="aflowz.school.citizen">
+        <field name="name">Adilla</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-02-28</field>
+        <field name="mobile">+6281300000098</field>
+        <field name="email">adilla@gmail.com</field>
+        <field name="class_id" ref="class_data_10"/>
+    </record>
+    <record id="student_data_99" model="aflowz.school.citizen">
+        <field name="name">Dila</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-01</field>
+        <field name="mobile">+6281300000099</field>
+        <field name="email">Dila@gmail.com</field>
+        <field name="class_id" ref="class_data_10"/>
+    </record>
+    <record id="student_data_100" model="aflowz.school.citizen">
+        <field name="name">Risya</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-02</field>
+        <field name="mobile">+6281300000100</field>
+        <field name="email">Risya@gmail.com</field>
+        <field name="class_id" ref="class_data_10"/>
+    </record>
+    <record id="student_data_101" model="aflowz.school.citizen">
+        <field name="name">Dimas</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-03</field>
+        <field name="mobile">+6281300000101</field>
+        <field name="email">dimas@gmail.com</field>
+        <field name="class_id" ref="class_data_11"/>
+    </record>
+    <record id="student_data_102" model="aflowz.school.citizen">
+        <field name="name">Jordan</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-04</field>
+        <field name="mobile">+6281300000102</field>
+        <field name="email">jordan@gmail.com</field>
+        <field name="class_id" ref="class_data_11"/>
+    </record>
+    <record id="student_data_103" model="aflowz.school.citizen">
+        <field name="name">Davin</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Jakarta</field>
+        <field name="birth_date">1996-03-04</field>
+        <field name="mobile">+6281300000103</field>
+        <field name="email">Davin@gmail.com</field>
+        <field name="class_id" ref="class_data_11"/>
+    </record>
+    <record id="student_data_104" model="aflowz.school.citizen">
+        <field name="name">Hamdan</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-05</field>
+        <field name="mobile">+6281300000104</field>
+        <field name="email">Hamdan@gmail.com</field>
+        <field name="class_id" ref="class_data_11"/>
+    </record>
+    <record id="student_data_105" model="aflowz.school.citizen">
+        <field name="name">Daliyanto</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-06</field>
+        <field name="mobile">+6281300000105</field>
+        <field name="email">daliyanto@gmail.com</field>
+        <field name="class_id" ref="class_data_11"/>
+    </record>
+    <record id="student_data_106" model="aflowz.school.citizen">
+        <field name="name">Ryan</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-07</field>
+        <field name="mobile">+62813000000106</field>
+        <field name="email">ryan@gmail.com</field>
+        <field name="class_id" ref="class_data_11"/>
+    </record>
+    <record id="student_data_107" model="aflowz.school.citizen">
+        <field name="name">Eki</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-08</field>
+        <field name="mobile">+62813000000107</field>
+        <field name="email">eki@gmail.com</field>
+        <field name="class_id" ref="class_data_11"/>
+    </record>
+    <record id="student_data_108" model="aflowz.school.citizen">
+        <field name="name">Firman</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-09</field>
+        <field name="mobile">+6281300000108</field>
+        <field name="email">firman@gmail.com</field>
+        <field name="class_id" ref="class_data_11"/>
+    </record>
+    <record id="student_data_109" model="aflowz.school.citizen">
+        <field name="name">Widi</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-10</field>
+        <field name="mobile">+6281300000109</field>
+        <field name="email">wijaya@gmail.com</field>
+        <field name="class_id" ref="class_data_11"/>
+    </record>
+    <record id="student_data_110" model="aflowz.school.citizen">
+        <field name="name">Febri</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-11</field>
+        <field name="mobile">+6281300000110</field>
+        <field name="email">febri@gmail.com</field>
+        <field name="class_id" ref="class_data_11"/>
+    </record>
+    <record id="student_data_111" model="aflowz.school.citizen">
+        <field name="name">Fina</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-12</field>
+        <field name="mobile">+6281300000071</field>
+        <field name="email">fina@gmail.com</field>
+        <field name="class_id" ref="class_data_12"/>
+    </record>
+    <record id="student_data_112" model="aflowz.school.citizen">
+        <field name="name">Dian</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-13</field>
+        <field name="mobile">+6281300000112</field>
+        <field name="email">dian@gmail.com</field>
+        <field name="class_id" ref="class_data_12"/>
+    </record>
+    <record id="student_data_113" model="aflowz.school.citizen">
+        <field name="name">Nona</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-14</field>
+        <field name="mobile">+6281300000113</field>
+        <field name="email">nona@gmail.com</field>
+        <field name="class_id" ref="class_data_12"/>
+    </record>
+    <record id="student_data_114" model="aflowz.school.citizen">
+        <field name="name">Yolanda</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-15</field>
+        <field name="mobile">+6281300000114</field>
+        <field name="email">yola@gmail.com</field>
+        <field name="class_id" ref="class_data_12"/>
+    </record>
+    <record id="student_data_115" model="aflowz.school.citizen">
+        <field name="name">Meidina</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-15</field>
+        <field name="mobile">+6281300000115</field>
+        <field name="email">meidina@gmail.com</field>
+        <field name="class_id" ref="class_data_12"/>
+    </record>
+    <record id="student_data_116" model="aflowz.school.citizen">
+        <field name="name">Muthia</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-16</field>
+        <field name="mobile">+6281300000116</field>
+        <field name="email">muthia@gmail.com</field>
+        <field name="class_id" ref="class_data_12"/>
+    </record>
+    <record id="student_data_117" model="aflowz.school.citizen">
+        <field name="name">Putri</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-17</field>
+        <field name="mobile">+6281300000117</field>
+        <field name="email">Putri@gmail.com</field>
+        <field name="class_id" ref="class_data_12"/>
+    </record>
+    <record id="student_data_118" model="aflowz.school.citizen">
+        <field name="name">Devina</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-18</field>
+        <field name="mobile">+6281300000118</field>
+        <field name="email">devina@gmail.com</field>
+        <field name="class_id" ref="class_data_12"/>
+    </record>
+    <record id="student_data_119" model="aflowz.school.citizen">
+        <field name="name">Septy</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-19</field>
+        <field name="mobile">+6281300000119</field>
+        <field name="email">septy@gmail.com</field>
+        <field name="class_id" ref="class_data_12"/>
+    </record>
+    <record id="student_data_120" model="aflowz.school.citizen">
+        <field name="name">Wirdha</field>
+        <field name="citizen_type">student</field>
+        <field name="birth_place">Bandung</field>
+        <field name="birth_date">1996-03-20</field>
+        <field name="mobile">+6281300000120</field>
+        <field name="email">wirdha@gmail.com</field>
+        <field name="class_id" ref="class_data_12"/>
+    </record>
+</odoo>

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_academic_document">
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"></t>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"></t>
+        </t>
+        <div class="header" style="border-bottom: 1px solid !important;">
+            <div class="row mt32 mb32">
+                <div class="col-8">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 50px;" />
+                </div>
+                <div class="col-4 text-right" style="background-color:#893b74 !important;border: 2px !important; border-radius: 5px !important; padding: 10px 10px 10px 0px !important; margin-left: -10px; border-style: solid !important; border-color: #fff; color:#fff !important; font:12px lucida-console,sans-serif !important;">
+                    <div t-if="company.partner_id">
+                      <span t-field="company.partner_id"/>
+                      <br/>
+                    </div>
+                    <div t-if="company.partner_id.street">
+                      <span t-field="company.partner_id.street"/>
+                      <br/>
+                    </div>
+                    <div t-if="company.partner_id.street2">
+                      <span t-field="company.partner_id.street2"/>
+                      <br/>
+                    </div>
+                    <div t-if="company.partner_id.city">
+                      <span t-field="company.partner_id.city"/>
+                      <br/>
+                    </div>
+                    <div t-if="company.partner_id.country_id">
+                      <span t-field="company.partner_id.country_id"/>
+                      <br/>
+                    </div>
+                    <div t-if="company.partner_id.vat">
+                      <span t-field="company.partner_id.vat"/>
+                      <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <t t-call="web.external_layout_background">
+            <div style="background-color:#893b74 !important;border: 2px !important; border-radius: 5px !important; padding: 15px 15px 0px 15px !important; color: white !important;">
+                <h2 style="color: white !important;"><b>RAPORT DOCUMENT</b></h2>
+                <h3>
+                    <span t-field="doc.name"/>
+                </h3>
+                <div id="informations" class="row mt32 mb32">
+                    <div class="col-auto mw-100 mb-2">
+                        <strong style="color: white !important;">Student:</strong>
+                        <p class="m-0" t-field="doc.student_id.name"/>
+                    </div>
+                    <div t-if="doc.student_id.nisn_number" class="col-auto mw-100 mb-2">
+                        <strong style="color: white !important;">NISN:</strong>
+                        <p class="m-0" t-field="doc.student_id.nisn_number"/>
+                    </div>
+                    <div t-if="doc.student_id.nis_number" class="col-auto mw-100 mb-2">
+                        <strong style="color: white !important;">NIS:</strong>
+                        <p class="m-0" t-field="doc.student_id.nis_number"/>
+                    </div>
+                    <div class="col-auto mw-100 mb-2">
+                        <strong style="color: white !important;">Year:</strong>
+                        <t t-set="years" t-value="doc.start_year + '/' + doc.end_year"/>
+                        <p class="m-0" t-esc="years"/>
+                    </div>
+                    <div class="col-auto mw-100 mb-2">
+                        <strong style="color: white !important;">Semester:</strong>
+                        <p class="m-0" t-field="doc.semester"/>
+                    </div>
+                    <div class="col-auto mw-100 mb-2">
+                        <strong style="color: white !important;">Grade:</strong>
+                        <p class="m-0" t-field="doc.grade_id.name"/>
+                    </div>
+                    <div class="col-auto mw-100 mb-2">
+                        <strong style="color: white !important;">Major:</strong>
+                        <p class="m-0" t-field="doc.major_id.name"/>
+                    </div>
+                </div>
+            </div>
+            <div id="score_percentage" class="text-justify">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th width="100px">Absence</th>
+                            <th width="100px">Homework</th>
+                            <th width="100px">Task</th>
+                            <th width="100px">Mid-Exam</th>
+                            <th width="100px">Final-Exam</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('absence.percentage') + '%'"/>
+                            </td>
+                            <td>
+                                <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('homework.percentage')+ '%'"/>
+                            </td>
+                            <td>
+                                <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('daily.task.percentage')+ '%'"/>
+                            </td>
+                            <td>
+                                <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('mid.exam.percentage') + '%'"/>
+                            </td>
+                            <td>
+                                <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('final.exam.percentage') + '%'"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-justify">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="active" style="background-color:#893b74 !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                            <th width="200px">Subject</th>
+                            <th width="100px" class="text-right">Homework</th>
+                            <th width="100px" class="text-right">Task</th>
+                            <th width="100px" class="text-right">Mid-Exam</th>
+                            <th width="100px" class="text-right">Final-Exam</th>
+                            <th width="100px" class="text-right">Avg Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="doc.raport_print_line_ids" t-as="print_line">
+                            <tr>
+                                <td>                            
+                                    <span t-field="print_line.subject_id.name"/> 
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="print_line.homework_avg_score"/> 
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="print_line.task_avg_score"/> 
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="print_line.mid_avg_score"/> 
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="print_line.final_avg_score"/> 
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="print_line.avg_score"/> 
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+            <div class="clearfix">
+                <div class="row">
+                    <div class="col-7">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td width="360px">
+                                   <strong>Sick</strong>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="doc.sick_leave"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="360px">
+                                    <strong>Permit</strong>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="doc.permit_leave"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="360px">
+                                    <strong>Alpha</strong>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="doc.alpha_leave"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-5">
+                        <table class="table table-sm;page-break-inside: avoid;">
+                            <tr class="border-black o_subtotal" style="">
+                                <td><strong>Subject Score:</strong></td>
+                                <td class="text-right">
+                                    <t t-set="total_score" t-value="'%s (%s)' % (round(sum(pl.avg_score for pl in doc.raport_print_line_ids), 2), len(doc.raport_print_line_ids))"/>
+                                    <p class="m-0" t-esc="total_score"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sub Avg Score:</strong></td>
+                                <td class="text-right">
+                                    <t t-set="total_subject" t-value="round(sum(pl.avg_score for pl in doc.raport_print_line_ids) / len(doc.raport_print_line_ids), 3)"/>
+                                    <p class="m-0" t-esc="total_subject"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Absence:</strong></td>
+                                <td class="text-right">
+                                    <t t-set="precent_percentage_val" t-value="'%s (%s)' % (str(round(doc.present_percentage, 2) * float(request.env['ir.config_parameter'].sudo().get_param('absence.percentage'))/100), str(round(doc.present_percentage, 2)) + '%')"/>
+                                    <span t-esc="precent_percentage_val"/>
+                                </td>
+                            </tr>
+                            <tr class="border-black o_subtotal" style="">
+                                <td style="background-color:#893b74 !important;color:#FFF !important;"><strong>Total Average Score:</strong></td>
+                                <td class="text-right" style="background-color:#893b74 !important;color:#FFF !important;">
+                                    <span t-field="doc.total_avg_score"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_academic">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="aflowz_academic.report_academic_document"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_tryout_document">
+        <t t-call="web.internal_layout">
+            <div style="border-bottom: 1px solid !important;">
+                <h5 style="text-transform: uppercase;">
+                    <strong>
+                        <span t-field="doc.name"/>
+                    </strong>
+                </h5>
+                <h5>
+                    <strong>
+                        <span t-esc="'Subject: ' + str(doc.subject_id.name)"/>
+                    </strong>
+                </h5>
+                <h5>
+                    <strong>
+                        <span t-esc="'Time: ' + str(doc.time) + ' Minutes'"/>
+                    </strong>
+                </h5>
+            </div>
+            <div>
+                <div class="row" style="margin: 20px 0px 30px -15px !important;">
+                    <div class="col-6">
+                        <span><b>Name:</b></span>
+                        <br/>
+                        <span><b>Class:</b></span>
+                    </div>
+                    <div class="col-6">
+                        <span><b>Date:</b></span>
+                        <span t-esc="str(doc.get_tryout_date())"></span>
+                    </div>
+                </div>
+                
+                <t t-set="question_len" t-value="int(1)"/>
+                <t t-foreach="doc.tryout_line_ids" t-as="tryout_line">
+                    <div>
+                        <div class="row" style="margin-bottom: -20px !important;">
+                            <div class="col-1">
+                                <span t-esc="str(question_len) + '.'"/>
+                            </div>
+                            <div class="col-11" style="margin-left: -50px !important;">
+                                <p t-field="tryout_line.question"/>
+                            </div>
+                        </div>
+                        <div class="row mt32 mb32">
+                            <div class="col-1"/>
+                            <div id="list_question" class="col-11" style="margin-left: -50px !important; margin-bottom: -20px !important;">
+                                <table>
+                                    <tr>
+                                        <td width="375px"><p t-esc="'a. ' + str(tryout_line.option_a)"/></td>
+                                        <td width="300px"><p t-esc="'d. ' + str(tryout_line.option_d)"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="375px"><p t-esc="'b. ' + str(tryout_line.option_b)"/></td>
+                                        <td width="300px"><p t-esc="'e. ' + str(tryout_line.option_e)"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="375px"><p t-esc="'c. ' + str(tryout_line.option_c)"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <t t-set="question_len" t-value="int(question_len) + int(1)"/>
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_tryout_document_with_answer" inherit_id="aflowz_academic.report_tryout_document" primary="True">
+        <xpath expr="//div[@id='list_question']/table" position="inside">
+            <tr>
+                <td>
+                    <p t-esc="tryout_line.answer_option()"/>
+                </td>
+            </tr>
+        </xpath>
+    </template>
+
+    <template id="report_tryout">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="aflowz_academic.report_tryout_document"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_tryout_with_answer">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="aflowz_academic.report_tryout_document_with_answer"/>
+            </t>
+        </t>
+    </template>
+</odoo>

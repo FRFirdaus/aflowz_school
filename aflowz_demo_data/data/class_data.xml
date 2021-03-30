@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- class 10 -->
+    <record id="class_data_1" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_1"/>
+        <field name="capacity">30</field>
+        <field name="name">X A</field>
+    </record>
+    <record id="class_data_2" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_1"/>
+        <field name="capacity">30</field>
+        <field name="name">X B</field>
+    </record>
+    <record id="class_data_3" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_1"/>
+        <field name="capacity">30</field>
+        <field name="name">X C</field>
+    </record>
+    <record id="class_data_4" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_all"/>
+        <field name="grade_id" ref="grade_data_x"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_1"/>
+        <field name="capacity">30</field>
+        <field name="name">X D</field>
+    </record>
+
+    <!-- class 11 -->
+    <record id="class_data_5" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xi"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_3"/>
+        <field name="capacity">30</field>
+        <field name="name">XI IPA 1</field>
+    </record>
+    <record id="class_data_6" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xi"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_2"/>
+        <field name="capacity">30</field>
+        <field name="name">XI IPA 2</field>
+    </record>
+    <record id="class_data_7" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_ips"/>
+        <field name="grade_id" ref="grade_data_xi"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_3"/>
+        <field name="capacity">30</field>
+        <field name="name">XI IPS 1</field>
+    </record>
+    <record id="class_data_8" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_ips"/>
+        <field name="grade_id" ref="grade_data_xi"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_2"/>
+        <field name="capacity">30</field>
+        <field name="name">XI IPS 2</field>
+    </record>
+
+    <!-- class 12 -->
+    <record id="class_data_9" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xii"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_4"/>
+        <field name="capacity">30</field>
+        <field name="name">XII IPA 1</field>
+    </record>
+    <record id="class_data_10" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_ipa"/>
+        <field name="grade_id" ref="grade_data_xii"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_11"/>
+        <field name="capacity">30</field>
+        <field name="name">XII IPA 2</field>
+    </record>
+    <record id="class_data_11" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_ips"/>
+        <field name="grade_id" ref="grade_data_xii"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_4"/>
+        <field name="capacity">30</field>
+        <field name="name">XII IPS 1</field>
+    </record>
+    <record id="class_data_12" model="aflowz.school.class">
+        <field name="major_id" ref="major_data_ips"/>
+        <field name="grade_id" ref="grade_data_xii"/>
+        <field name="homeroom_teacher_id" ref="teacher_data_11"/>
+        <field name="capacity">30</field>
+        <field name="name">XII IPS 2</field>
+    </record>
+</odoo>

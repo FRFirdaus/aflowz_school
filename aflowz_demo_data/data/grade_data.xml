@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="grade_data_x" model="aflowz.school.grade">
+        <field name="name">X</field>
+    </record>
+
+    <record id="grade_data_xi" model="aflowz.school.grade">
+        <field name="name">XI</field>
+    </record>
+    
+    <record id="grade_data_xii" model="aflowz.school.grade">
+        <field name="name">XII</field>
+    </record>
+</odoo>

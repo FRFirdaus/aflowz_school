@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aflowz_school_class_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_school_class_tree_view</field>
+        <field name="model">aflowz.school.class</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="homeroom_teacher_id"/>
+                <field name="class_leader_id"/>
+                <field name="grade_id"/>
+                <field name="major_id"/>
+                <field name="capacity"/>
+                <field name="total_students"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_school_class_form_view" model="ir.ui.view">
+        <field name="name">aflowz_school_class_form_view</field>
+        <field name="model">aflowz.school.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_move_class" string="Move Class" class="btn-primary" type="object"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Class Name"/>
+                        <h1><field name="name" placeholder="Class Name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="major_id"/>
+                            <field name="homeroom_teacher_id" context="{'default_citizen_type': 'teacher'}" domain = "[('citizen_type', '=', 'teacher')]"/>
+                            <field name="class_leader_id" options="{'no_create_edit': True, 'no_quick_create': True}" domain="[('id', 'in', student_ids)]"/>
+                        </group>
+                        <group>
+                            <field name="grade_id"/>
+                            <field name="capacity"/>
+                            <field name="total_students" readonly="1"/>
+                            <field name="available_capacity" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Student Informations">
+                            <div class="label-height">
+                                <label class="label-title-o2many-booking" for="" string="Student Lists"/>
+                                <field name="student_ids" context="{'default_citizen_type': 'student'}">
+                                    <tree editable="bottom" default_order='name'>
+                                        <field name="name"/>
+                                        <field name="birth_place"/>
+                                        <field name="birth_date"/>
+                                        <field name="mobile"/>
+                                        <field name="email"/>
+                                        <field name="citizen_type" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="aflowz_school_class" model="ir.actions.act_window">
+        <field name="name">Classes</field>
+        <field name="res_model">aflowz.school.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

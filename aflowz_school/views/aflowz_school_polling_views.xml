@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aflowz_school_polling_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_school_polling_tree_view</field>
+        <field name="model">aflowz.school.polling</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="option_ids" string="Options" widget="many2many_tags"/>
+                <field name="participant_count_string" string="Voters"/>
+                <field name="description"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_school_polling_form_view" model="ir.ui.view">
+        <field name="name">aflowz_school_polling_form_view</field>
+        <field name="model">aflowz.school.polling</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_open" string="Open Voting" class="btn-primary" type="object" attrs="{'invisible': [('state', '=', 'open')]}"/>
+                    <button name="action_done" string="Finish Voting" class="btn-primary" type="object" attrs="{'invisible': [('state', 'in', ['draft', 'done'])]}"/>
+                    <button name="action_set_to_draft" string="Set to Draft" class="btn-primary" type="object" attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="action_graph"
+                            type="object"
+                            class="oe_stat_button"
+                            attrs="{'invisible': [('participant_count', '=', 0)]}"
+                            icon="fa-list">
+                            <field name="participant_count" widget="statinfo" string="Voters"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Polling Title"/>
+                        <h1><field name="name" placeholder="Polling Title" attrs="{'readonly': [('state', '!=', 'draft')]}"/></h1>
+                    </div>
+                    <notebook>
+                        <page string="General Informations">
+                            <group>
+                                <group>
+                                    <field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    <field name="option_ids" string="Options" widget="many2many_tags" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    <field name="voter_type" string="Participant" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                </group>
+                                <group>
+                                    <field name="open_vote_date" string="Open Vote at" readonly="1" attrs="{'invisible': [('open_vote_date', '=', False)]}"/>
+                                    <field name="finish_vote_date" string="Finish Vote at" readonly="1" attrs="{'invisible': [('finish_vote_date', '=', False)]}"/>
+                                    <field name="description" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                </group>
+                            </group>
+                            <field name="polling_line_ids" attrs="{'readonly': [('state', 'in', ['draft', 'done'])]}" context="{'default_option_ids': option_ids, 'default_voter_type': voter_type}">
+                                <tree editable="bottom">
+                                    <field name="voter_id"/>
+                                    <field name="voter_type" invisible="1"/>
+                                    <field name="option_ids" widget="many2many_tags" invisible="1"/>
+                                    <field name="option_id" domain="[('id', 'in', option_ids)]" options="{'no_create_edit': True, 'no_quick_create': True}"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Polling Result">
+                            <field name="polling_result_ids" readonly="1">
+                                <tree>
+                                    <field name="option_id"/>
+                                    <field name="polling_percentage" invisible="1"/>
+                                    <field name="polling_percentage_string" string="Result"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="aflowz_school_polling_line_graph_view" model="ir.ui.view">
+        <field name="name">aflowz_school_polling_line_graph_view</field>
+        <field name="model">aflowz.school.polling.line</field>
+        <field name="arch" type="xml">
+            <graph>
+                <field name="option_id" type="row"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="aflowz_school_polling" model="ir.actions.act_window">
+        <field name="name">Pollings</field>
+        <field name="res_model">aflowz.school.polling</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

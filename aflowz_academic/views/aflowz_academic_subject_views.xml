@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aflowz_academic_subject_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_subject_tree_view</field>
+        <field name="model">aflowz.academic.subject</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="grade_id"/>
+                <field name="major_id"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_academic_subject_form_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_subject_form_view</field>
+        <field name="model">aflowz.academic.subject</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Subject Name"/>
+                        <h1><field name="name" placeholder="Subject Name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="grade_id"/>
+                            <field name="major_id"/>
+                        </group>
+                        <group>
+                            <field name="class_ids" widget="many2many_tags"/>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="inherit_aflowz_school_class_form_view" model="ir.ui.view">
+		<field name="name">inherit.aflowz.school.class.form.view</field>
+		<field name="model">aflowz.school.class</field>
+		<field name="inherit_id" ref="aflowz_school.aflowz_school_class_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='class_leader_id']" position="after">
+                <field name="subject_ids" widget="many2many_tags" readonly="1"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Class Schedule">
+                    <field name="class_schedule_ids" context="{'default_subject_ids': subject_ids}">
+                        <tree editable="bottom">
+                            <field name="subject_ids" invisible="1"/>
+                            <field name="subject_id" domain="[('id', 'in', subject_ids)]"/>
+                            <field name="days"/>
+                            <field name="start_time" widget="float_time"/>
+                            <field name="end_time" widget="float_time"/>
+                            <field name="teacher_id" domain="[('citizen_type', '=', 'teacher')]"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+		</field>
+	</record>
+
+    <record id="aflowz_academic_subject_search_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_subject_search_view</field>
+        <field name="model">aflowz.academic.subject</field>
+        <field name="arch" type="xml">
+            <search string="Search Subjects">
+                <group string="Group By">
+                    <filter name="group_grade_id" string="Subject by grade"
+                            context="{'group_by': 'grade_id'}" />
+                    <filter name="group_major_id" string="Subject by major"
+                            context="{'group_by': 'major_id'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_aflowz_academic_subject" model="ir.actions.act_window">
+        <field name="name">Subjects</field>
+        <field name="res_model">aflowz.academic.subject</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{"search_default_group_grade_id":1, "search_default_group_major_id":1}</field>
+    </record>
+</odoo>

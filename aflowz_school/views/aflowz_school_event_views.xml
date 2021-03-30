@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aflowz_school_event_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_school_event_tree_view</field>
+        <field name="model">aflowz.school.event</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="pic_id"/>
+                <field name="event_type"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_school_event_form_view" model="ir.ui.view">
+        <field name="name">aflowz_school_event_form_view</field>
+        <field name="model">aflowz.school.event</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Event Name"/>
+                        <h1><field name="name" placeholder="Event Name"/></h1>
+                    </div>
+                    <notebook>
+                        <page string="General Informations">
+                            <group>
+                                <group>
+                                    <field name="held_by" widget='radio'/>
+                                    <field name="event_type" widget='radio'/>
+                                    <field name="pic_id" string="Person in Charge" domain="[('citizen_type', '=', held_by)]"/>
+                                </group>
+                                <group>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="description"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="aflowz_school_event_calendar_view" model="ir.ui.view">
+        <field name="name">aflowz_school_event_calendar_view</field>
+        <field name="model">aflowz.school.event</field>
+        <field name="arch" type="xml">
+            <calendar string="Events" date_start="start_date" date_stop="end_date"
+                event_open_popup="true"
+                mode="week"
+                event_limit="3"
+                color="event_type"
+                quick_add="False">
+                <field name="pic_id" string="PIC Event"/>
+                <field name="description"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="aflowz_school_event" model="ir.actions.act_window">
+        <field name="name">Events</field>
+        <field name="res_model">aflowz.school.event</field>
+        <field name="view_mode">calendar,tree,form</field>
+    </record>
+</odoo>

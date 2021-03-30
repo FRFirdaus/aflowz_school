@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aflowz_academic_book_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_book_tree</field>
+        <field name="model">aflowz.academic.book</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="subject_id"/>
+                <field name="author"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_academic_book_form_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_book_form</field>
+        <field name="model">aflowz.academic.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Book Name"/>
+                        <h1><field name="name" placeholder="Book Name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="subject_id"/>
+                            <field name="author"/>
+                            <field name="book_type"/>
+                        </group>
+                        <group>
+                            <field name="publisher"/>
+                            <field name="synopsis"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_aflowz_academic_book" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">aflowz.academic.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

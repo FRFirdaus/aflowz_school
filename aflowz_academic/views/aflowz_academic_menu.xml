@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_aflowz_academic_config" name="Academic" sequence="1" web_icon="aflowz_academic,static/src/icon/academic.png"/>
+    <menuitem id="menu_aflowz_academic_subject" parent="menu_aflowz_academic_config" sequence="10" groups="group_aflowz_academic_user" action="action_aflowz_academic_subject" name="Subjects"/>
+    <menuitem id="menu_aflowz_academic_book" parent="menu_aflowz_academic_config" sequence="20" groups="group_aflowz_academic_user" action="action_aflowz_academic_book" name="Books"/>
+    <menuitem id="menu_aflowz_curriculum_config" parent="menu_aflowz_academic_config" name="Curriculum" sequence="30"/>
+    <menuitem id="menu_aflowz_academic_curriculum" parent="menu_aflowz_curriculum_config" sequence="30" groups="group_aflowz_academic_user" action="action_aflowz_academic_curriculum" name="Curriculums"/>
+    <menuitem id="menu_aflowz_academic_curriculum_line" parent="menu_aflowz_curriculum_config" sequence="40" groups="group_aflowz_academic_user" action="action_aflowz_academic_curriculum_line" name="Curriculum Chapters"/>
+    <menuitem id="menu_aflowz_raport_config" parent="menu_aflowz_academic_config" name="Raport" sequence="40"/>
+    <menuitem id="menu_aflowz_academic_raport" parent="menu_aflowz_raport_config" sequence="10" groups="group_aflowz_academic_user" action="action_aflowz_academic_raport" name="Raports (Tasks, Homeworks, Exams)"/>
+    <menuitem id="menu_aflowz_academic_raport_line" parent="menu_aflowz_raport_config" sequence="20" groups="group_aflowz_academic_user" action="action_aflowz_academic_raport_line" name="Raport Details"/>
+    <menuitem id="menu_aflowz_absence_config" parent="menu_aflowz_academic_config" name="Absence" sequence="50"/>
+    <menuitem id="menu_aflowz_academic_absence" parent="menu_aflowz_absence_config" sequence="10" groups="group_aflowz_academic_user" action="action_aflowz_academic_absence" name="Absences"/>
+    <menuitem id="menu_aflowz_academic_absence_line" parent="menu_aflowz_absence_config" sequence="20" groups="group_aflowz_academic_user" action="action_aflowz_absence_line" name="Absence Details"/>
+    <menuitem id="menu_aflowz_academic_tryout" parent="menu_aflowz_academic_config" sequence="60" groups="group_aflowz_academic_user" action="action_aflowz_academic_tryout" name="Try Outs"/>
+</odoo>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aflowz_academic_curriculum_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_curriculum_tree</field>
+        <field name="model">aflowz.academic.curriculum</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="subject_id"/>
+                <field name="book_id"/>
+                <field name="class_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_academic_curriculum_form_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_curriculum_form</field>
+        <field name="model">aflowz.academic.curriculum</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Curriculum Title"/>
+                        <h1><field name="name" placeholder="Curriculum Title"/></h1>
+                    </div>
+                    <notebook>
+                        <page string="General Informations">
+                            <group>
+                                <group>
+                                    <field name="subject_id"/>
+                                    <field name="book_id" />
+                                    <field name="class_ids" widget="many2many_tags"/>
+                                </group>
+                                <group>
+                                    <field name="school_year1" string="Start Year"/>
+                                    <field name="school_year2" string="End Year"/>
+                                    <field name="semester"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Curriculum Lists">
+                            <field name="curriculum_line_ids">
+                                <tree editable="bottom">
+                                    <field name="name" string="Chapter Name"/>
+                                    <field name="chapter"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="aflowz_academic_curriculum_line_tree_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_curriculum_line_tree</field>
+        <field name="model">aflowz.academic.curriculum.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="display_name" string="Chapter Name"/>
+                <field name="curriculum_id"/>
+                <field name="subject_id"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="aflowz_academic_curriculum_line_form_view" model="ir.ui.view">
+        <field name="name">aflowz_academic_curriculum_line_form</field>
+        <field name="model">aflowz.academic.curriculum.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Chapter Title"/>
+                        <h1><field name="name" placeholder="Chapter Title"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="subject_id"/>
+                            <field name="curriculum_id"/>
+                        </group>
+                        <group>
+                            <field name="chapter"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_aflowz_academic_curriculum" model="ir.actions.act_window">
+        <field name="name">Curriculums</field>
+        <field name="res_model">aflowz.academic.curriculum</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_aflowz_academic_curriculum_line" model="ir.actions.act_window">
+        <field name="name">Curriculum Chapters</field>
+        <field name="res_model">aflowz.academic.curriculum.line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="aflowz_school_config" name="School" sequence="1" web_icon="aflowz_school,static/src/icon/school.png"/>
+    <menuitem id="aflowz_school_class_menu" parent="aflowz_school_config" sequence="10" groups="group_aflowz_school_user" action="aflowz_school_class" name="Classes"/>
+    <menuitem id="aflowz_school_teacher_menu" parent="aflowz_school_config" sequence="20" groups="group_aflowz_school_user" action="aflowz_school_teacher" name="Teachers"/>
+    <menuitem id="aflowz_school_student_menu" parent="aflowz_school_config" sequence="30" groups="group_aflowz_school_user" action="aflowz_school_student" name="Students"/>
+    <menuitem id="aflowz_school_event_menu" parent="aflowz_school_config" sequence="40" groups="group_aflowz_school_user" action="aflowz_school_event" name="Events"/>
+    <menuitem id="aflowz_school_config2" name="Configruation" sequence="50" parent="aflowz_school_config" groups="group_aflowz_school_user"/>
+    <menuitem id="aflowz_school_grade_menu" name="Grades" sequence="10" parent="aflowz_school_config2" action="aflowz_school_grade" groups="group_aflowz_school_user"/>
+    <menuitem id="aflowz_school_major_menu" name="Majors" sequence="20" parent="aflowz_school_config2" action="aflowz_school_major" groups="group_aflowz_school_user"/>
+    <menuitem id="aflowz_school_polling_menu" name="Pollings" sequence="30" parent="aflowz_school_config" action="aflowz_school_polling" groups="group_aflowz_school_user"/>
+    <menuitem id="aflowz_school_announcement_menu" name="Announcement" sequence="60" parent="aflowz_school_config" action="aflowz_school_announcement" groups="group_aflowz_school_user"/>
+</odoo>

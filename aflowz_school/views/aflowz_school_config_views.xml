@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aflowz_school_grade" model="ir.actions.act_window">
+        <field name="name">Grades</field>
+        <field name="res_model">aflowz.school.grade</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="aflowz_school_major" model="ir.actions.act_window">
+        <field name="name">Majors</field>
+        <field name="res_model">aflowz.school.major</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
