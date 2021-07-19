@@ -30,7 +30,6 @@ class ClassRequest(http.Controller, PureControllerMixin):
         '''
             GET list of class
         '''
-        data = json.loads((request.httprequest.data).decode())
         data_response = {}
         success_status = False
         headers_json = {'Content-Type': 'application/json'}
