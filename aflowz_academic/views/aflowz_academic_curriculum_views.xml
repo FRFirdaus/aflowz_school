@@ -20,7 +20,7 @@
             <form>
                 <sheet>
                     <div class="oe_title">
-                        <label class="oe_edit_only" for="name" string="Curriculum Title"/>
+                        <label class="oe_edit_only o_form_label" for="name" string="Curriculum Title"/>
                         <h1><field name="name" placeholder="Curriculum Title"/></h1>
                     </div>
                     <notebook>
@@ -75,7 +75,7 @@
             <form>
                 <sheet>
                     <div class="oe_title">
-                        <label class="oe_edit_only" for="name" string="Chapter Title"/>
+                        <label class="oe_edit_only o_form_label" for="name" string="Chapter Title"/>
                         <h1><field name="name" placeholder="Chapter Title"/></h1>
                     </div>
                     <group>

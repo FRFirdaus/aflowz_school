@@ -38,7 +38,7 @@
                         </button>
                     </div>
                     <div class="oe_title">
-                        <label class="oe_edit_only" for="name" string="Polling Title"/>
+                        <label class="oe_edit_only o_form_label" for="name" string="Polling Title"/>
                         <h1><field name="name" placeholder="Polling Title" attrs="{'readonly': [('state', '!=', 'draft')]}"/></h1>
                     </div>
                     <notebook>

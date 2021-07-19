@@ -27,7 +27,7 @@
                 </header>
                 <sheet>
                     <div class="oe_title">
-                        <label class="oe_edit_only" for="name" string="Task/Homework/Exam Title"/>
+                        <label class="oe_edit_only o_form_label" for="name" string="Task/Homework/Exam Title"/>
                         <h1><field name="name" placeholder="Task/Homework/Exam Title"/></h1>
                     </div>
                     <notebook>
@@ -146,7 +146,7 @@
                 </header>
                 <sheet>
                     <div class="oe_title">
-                        <label class="oe_edit_only" for="name" string="Raport Name"/>
+                        <label class="oe_edit_only o_form_label" for="name" string="Raport Name"/>
                         <h1><field name="name" readonly="1"/></h1>
                     </div>
                     <group>
@@ -164,7 +164,7 @@
                     </group>
                     <notebook>
                         <page string="General Information">
-                            <b><label style="color: #007263; padding-bottom: 0px; font-size: 16px; font-weight: 500; text-transform: uppercase;" for="" string="Scoring Percentage"/></b>
+                            <b><label class="o_form_label" style="color: #007263; padding-bottom: 0px; font-size: 16px; font-weight: 500; text-transform: uppercase;" for="" string="Scoring Percentage"/></b>
                             <group>
                                 <group>
                                     <field name="absence_percentage" string="Absence"/>
@@ -176,7 +176,7 @@
                                     <field name="final_percentage" string="Final-Exam"/>
                                 </group>
                             </group>
-                            <b><label style="color: #007263; padding-bottom: 5px; font-size: 16px; font-weight: 500; text-transform: uppercase;" for="" string="Score Details"/></b>
+                            <b><label class="o_form_label" style="color: #007263; padding-bottom: 5px; font-size: 16px; font-weight: 500; text-transform: uppercase;" for="" string="Score Details"/></b>
                             <field name="raport_print_line_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
                                 <tree editable="bottom">
                                     <field name="subject_id"/>
