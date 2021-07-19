@@ -60,13 +60,13 @@ class ClassRequest(http.Controller, PureControllerMixin):
                         'name', sgrade.name
                     ) as grade,
                     jsonb_agg(
-                        DISTINCT json_build_object(
+                        DISTINCT jsonb_build_object(
                             'id', asub.id,
                             'name', asub.name
                         )
                     ) as subjects,
                     jsonb_agg(
-                        DISTINCT json_build_object(
+                        DISTINCT jsonb_build_object(
                             'id', ams.id,
                             'name', ams.name,
                             'mobile', ams.mobile,
