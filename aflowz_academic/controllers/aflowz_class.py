@@ -60,9 +60,9 @@ class ClassRequest(http.Controller, PureControllerMixin):
                         'name', sgrade.name
                     ) as grade
                 FROM aflowz_school_class sc
-                JOIN aflowz_school_citizen scleader 
+                LEFT JOIN aflowz_school_citizen scleader 
                     ON sc.class_leader_id = scleader.id
-                JOIN aflowz_school_citizen scteacher
+                LEFT JOIN aflowz_school_citizen scteacher
                     ON sc.homeroom_teacher_id = scteacher.id
                 JOIN aflowz_school_major smajor
                     ON sc.major_id = smajor.id
