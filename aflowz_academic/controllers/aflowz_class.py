@@ -33,7 +33,7 @@ class ClassRequest(http.Controller, PureControllerMixin):
         data_response = {}
         success_status = False
         headers_json = {'Content-Type': 'application/json'}
-        access_token = str(request.env['ir.config_parameter'].sudo().get_param('aflowz.static_token'))
+        access_token = str(request.env['ir.config_parameter'].sudo().get_param('api.static_token'))
         headers = http.request.httprequest.headers
         # check authorize by static token 
         if headers.get('Authorization') == access_token:

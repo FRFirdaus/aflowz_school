@@ -7,7 +7,7 @@ class AcademicSettings(models.TransientModel):
 
     
     api_static_token = fields.Char(
-        config_parameter='aflowz.static_token',
+        config_parameter='api.static_token',
         default='123'
     )
 
