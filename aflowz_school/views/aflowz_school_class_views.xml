@@ -45,7 +45,7 @@
                     <notebook>
                         <page string="Student Informations">
                             <div class="label-height">
-                                <label class="label-title-o2many-booking o_form_label" for="" string="Student Lists" class="o_form_label"/>
+                                <label class="label-title-o2many-booking o_form_label" for="" string="Student Lists"/>
                                 <field name="student_ids" context="{'default_citizen_type': 'student'}">
                                     <tree editable="bottom" default_order='name'>
                                         <field name="name"/>
