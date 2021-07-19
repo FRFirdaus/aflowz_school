@@ -58,8 +58,30 @@ class ClassRequest(http.Controller, PureControllerMixin):
                     json_build_object(
                         'id', sgrade.id,
                         'name', sgrade.name
-                    ) as grade
+                    ) as grade,
+                    jsonb_agg(
+                        json_build_object(
+                            'id', asub.id,
+                            'name', asub.name
+                        )
+                    ) as subjects,
+                    jsonb_agg(
+                        json_build_object(
+                            'id', ams.id,
+                            'name', ams.name,
+                            'mobile', ams.mobile,
+                            'email', ams.email,
+                            'birth_date', ams.birth_date,
+                            'birth_place', ams.birth_place
+                        )
+                    ) as class_members
                 FROM aflowz_school_class sc
+                LEFT JOIN aflowz_school_citizen ams 
+                    ams.class_id = sc.id
+                LEFT JOIN aflowz_academic_subject_aflowz_school_class_rel asubsch
+                    ON asubsch.aflowz_school_class_id = sc.id
+                LEFT JOIN aflowz_academic_subject asub
+                    ON asubsch.aflowz_academic_subject_id = asub.id
                 LEFT JOIN aflowz_school_citizen scleader 
                     ON sc.class_leader_id = scleader.id
                 LEFT JOIN aflowz_school_citizen scteacher
@@ -68,6 +90,7 @@ class ClassRequest(http.Controller, PureControllerMixin):
                     ON sc.major_id = smajor.id
                 JOIN aflowz_school_grade sgrade
                     ON sc.grade_id = sgrade.id
+                GROUP BY sc.id, smajor.id, sgrade.id, scleader.id, scteacher.id
             """)
 
             classes = request.env.cr.dictfetchall()
