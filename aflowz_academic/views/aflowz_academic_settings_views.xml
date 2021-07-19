@@ -14,7 +14,7 @@
                                 <div class="content-group">
                                     <div class="mt16 row">
                                         <label for="api_static_token" string="API Static Token" class="col-xs-3 col-md-3 o_light_label"/>
-                                        <field name="api_static_token"/>
+                                        <field name="api_static_token" class="font-weight-bold"/>
                                     </div>
                                 </div>
                             </div>
