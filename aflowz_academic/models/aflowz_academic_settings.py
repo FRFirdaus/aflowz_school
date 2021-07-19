@@ -5,6 +5,12 @@ from odoo import fields, models
 class AcademicSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
+    
+    api_static_token = fields.Char(
+        config_parameter='aflowz.static_token',
+        default='123'
+    )
+
     absence = fields.Float(
         string='Absence',
         config_parameter='absence.percentage',

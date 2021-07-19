@@ -1,37 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_academic_config_settings" model="ir.ui.view">
-        <field name="name">Academic Settings</field>
+    <record id="aflowz_static_token_config_settings" model="ir.ui.view">
+        <field name="name">static_token_settings</field>
         <field name="model">res.config.settings</field>
-        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//h2[contains(text(),'Users')]" position="before">
-                <div id="academic_setting">
-                    <h2>Academic Percentage Settings</h2>
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Aflowz" string="Aflowz" data-key="aflowz_school">
+                    <h2>API Static Token</h2>
                     <div class="row mt16 o_settings_container">
-                        <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="col-xs-12 col-md-12 o_setting_box">
                             <div class="o_setting_right_pane">
-                                <label for="absence" class="col-xs-3 col-md-3 o_light_label"/>
-                                <field name="absence" class="font-weight-bold"/>
-                                <label for="daily_task" class="col-xs-3 col-md-3 o_light_label"/>
-                                <field name="daily_task" class="font-weight-bold"/>
-                                <label for="Homework" class="col-xs-3 col-md-3 o_light_label"/>
-                                <field name="Homework" class="font-weight-bold"/>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6 o_setting_box">
-                            <div class="o_setting_right_pane">
-                                <label for="midterm_exam" class="col-xs-3 col-md-3 o_light_label"/>
-                                <field name="midterm_exam" class="font-weight-bold"/>
-                                <br/>
-                                <label for="final_exam" class="col-xs-3 col-md-3 o_light_label"/>
-                                <field name="final_exam" class="font-weight-bold"/>
-                                <br/>
-                                <label for="other" class="col-xs-3 col-md-3 o_light_label"/>
-                                <field name="other" class="font-weight-bold"/>
+                                <div class="content-group">
+                                    <div class="mt16 row">
+                                        <label for="api_static_token" string="API Static Token" class="col-xs-3 col-md-3 o_light_label"/>
+                                        <field name="api_static_token"/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div id="academic_setting">
+                        <h2>Academic Percentage Settings</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="absence" class="col-xs-3 col-md-3 o_light_label"/>
+                                    <field name="absence" class="font-weight-bold"/>
+                                    <label for="daily_task" class="col-xs-3 col-md-3 o_light_label"/>
+                                    <field name="daily_task" class="font-weight-bold"/>
+                                    <label for="Homework" class="col-xs-3 col-md-3 o_light_label"/>
+                                    <field name="Homework" class="font-weight-bold"/>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="midterm_exam" class="col-xs-3 col-md-3 o_light_label"/>
+                                    <field name="midterm_exam" class="font-weight-bold"/>
+                                    <br/>
+                                    <label for="final_exam" class="col-xs-3 col-md-3 o_light_label"/>
+                                    <field name="final_exam" class="font-weight-bold"/>
+                                    <br/>
+                                    <label for="other" class="col-xs-3 col-md-3 o_light_label"/>
+                                    <field name="other" class="font-weight-bold"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </xpath>
         </field>
