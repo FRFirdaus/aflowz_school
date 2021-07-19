@@ -77,7 +77,7 @@ class ClassRequest(http.Controller, PureControllerMixin):
                     ) as class_members
                 FROM aflowz_school_class sc
                 LEFT JOIN aflowz_school_citizen ams 
-                    ams.class_id = sc.id
+                    ON ams.class_id = sc.id
                 LEFT JOIN aflowz_academic_subject_aflowz_school_class_rel asubsch
                     ON asubsch.aflowz_school_class_id = sc.id
                 LEFT JOIN aflowz_academic_subject asub
