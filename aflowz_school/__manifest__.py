@@ -16,6 +16,7 @@
     'depends': ['mail'],
     'data': [
         'security/group.xml',
+        'views/res_config_views.xml',
         'security/ir.model.access.csv',
         'views/aflowz_school_config_views.xml',
         'views/aflowz_school_class_views.xml',
