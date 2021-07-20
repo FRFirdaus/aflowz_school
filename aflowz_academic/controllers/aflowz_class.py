@@ -28,7 +28,7 @@ class ClassRequest(http.Controller, PureControllerMixin):
     @http.route([
         '/api/v1/class',
         '/api/v1/class/<int:class_id>',
-        '/api/v1/class?<string:class_id>'], auth='public', methods=['GET'])
+        '/api/v1/class?<int:class_id>'], auth='public', methods=['GET'])
     def get_class(self, class_id=None):
         '''
             GET list of class
