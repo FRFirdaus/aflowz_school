@@ -43,7 +43,8 @@ class ClassRequest(http.Controller, PureControllerMixin):
             if class_id:
                 where_class_id = "WHERE sc.id = {}".format(class_id)
             request.env.cr.execute("""
-                SELECT 
+                SELECT
+                    sc.id,
                     sc.name,
                     sc.capacity,
                     sc.total_students,
