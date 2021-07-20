@@ -41,7 +41,7 @@ class ClassRequest(http.Controller, PureControllerMixin):
         # check authorize by static token 
         if headers.get('Authorization') == access_token:
             where_class_id = ""
-            if class_id:
+            if id:
                 where_class_id = "WHERE sc.id in ({})".format(id)
             request.env.cr.execute("""
                 SELECT
