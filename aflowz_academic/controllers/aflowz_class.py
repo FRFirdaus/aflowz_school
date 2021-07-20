@@ -25,8 +25,10 @@ class ClassRequest(http.Controller, PureControllerMixin):
     # it means all response from endpoint with path /api/... will got purificiation from standard odoo POST/PUT HTTP response 
     PureControllerMixin.patch_for_json("^/api/")
 
-    @http.route('/api/v1/class', auth='public', methods=['GET'])
-    def get_class(self):
+    @http.route([
+        '/api/v1/class',
+        '/api/v1/class/<int:class_id>'], auth='public', methods=['GET'])
+    def get_class(self, class_id=0):
         '''
             GET list of class
         '''
@@ -37,6 +39,9 @@ class ClassRequest(http.Controller, PureControllerMixin):
         headers = http.request.httprequest.headers
         # check authorize by static token 
         if headers.get('Authorization') == access_token:
+            where_class_id = ""
+            if class_id:
+                where_class_id = "WHERE sc.id = {}".format(class_id)
             request.env.cr.execute("""
                 SELECT 
                     sc.name,
@@ -90,8 +95,9 @@ class ClassRequest(http.Controller, PureControllerMixin):
                     ON sc.major_id = smajor.id
                 JOIN aflowz_school_grade sgrade
                     ON sc.grade_id = sgrade.id
+                %s
                 GROUP BY sc.id, smajor.id, sgrade.id, scleader.id, scteacher.id
-            """)
+            """ % (where_class_id))
 
             classes = request.env.cr.dictfetchall()
 
