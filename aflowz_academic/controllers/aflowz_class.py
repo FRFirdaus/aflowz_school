@@ -27,9 +27,9 @@ class ClassRequest(http.Controller, PureControllerMixin):
 
     @http.route([
         '/api/v1/class',
-        '/api/v1/class/<int:class_id>',
-        '/api/v1/class?<int:class_id>'], auth='public', methods=['GET'])
-    def get_class(self, class_id=None):
+        '/api/v1/class/<int:id>',
+        '/api/v1/class?<int:id>'], auth='public', methods=['GET'])
+    def get_class(self, id=None):
         '''
             GET list of class
         '''
@@ -42,7 +42,7 @@ class ClassRequest(http.Controller, PureControllerMixin):
         if headers.get('Authorization') == access_token:
             where_class_id = ""
             if class_id:
-                where_class_id = "WHERE sc.id in ("+str(class_id)+")"
+                where_class_id = "WHERE sc.id in ({})".format(id)
             request.env.cr.execute("""
                 SELECT
                     sc.id,
