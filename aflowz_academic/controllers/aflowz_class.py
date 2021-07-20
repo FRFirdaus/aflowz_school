@@ -42,7 +42,7 @@ class ClassRequest(http.Controller, PureControllerMixin):
         if headers.get('Authorization') == access_token:
             where_class_id = ""
             if class_id:
-                where_class_id = "WHERE sc.id in ({})".format(class_id)
+                where_class_id = "WHERE sc.id in ("+str(class_id)+")"
             request.env.cr.execute("""
                 SELECT
                     sc.id,
