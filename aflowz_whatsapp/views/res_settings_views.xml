@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_whatsapp_config_settings" model="ir.ui.view">
+        <field name="name">Twilio Whatsapp Settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='aflowz_school']" position="before">
+                <div id="whatsapp_setting">
+                    <h2>Twilio Whatsapp Settings</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-xs-12 col-md-12 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <div class="mt16 row">
+                                        <label for="twilio_account_sid" string="Twilio Account SID" class="col-xs-3 col-md-3 o_light_label o_form_label"/>
+                                        <field name="twilio_account_sid" class="font-weight-bold"/>4
+                                        <label for="twilio_auth_token" string="Twilio Auth Token" class="col-xs-3 col-md-3 o_light_label o_form_label"/>
+                                        <field name="twilio_auth_token" class="font-weight-bold"/>
+                                        <label for="twilio_mobile" string="Twilio Mobile" class="col-xs-3 col-md-3 o_light_label o_form_label"/>
+                                        <field name="twilio_mobile" class="font-weight-bold"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

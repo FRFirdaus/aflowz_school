@@ -20,7 +20,11 @@
 #
 #############################################################################
 
+import logging
+from twilio.rest import Client
 from odoo import models, api, fields
+
+logger = logging.getLogger()
 
 
 class WhatsappSendMessage(models.TransientModel):
@@ -44,3 +48,38 @@ class WhatsappSendMessage(models.TransientModel):
                 'target': 'new',
                 'res_id': self.id,
             }
+
+    def send_direct_msg(self):
+        if self.message and self.citizen_id:
+            account_sid = str(self.env['ir.config_parameter'].sudo().get_param('twilio.account_sid'))
+            auth_token = str(self.env['ir.config_parameter'].sudo().get_param('twilio.auth_token'))
+            from_number = str(self.env['ir.config_parameter'].sudo().get_param('twilio.mobile'))
+            to_number = self.citizen_id.mobile
+            message_string = self.message
+
+            if not account_sid:
+                raise ValidationError(_("Twilio Account SID is empty please check it on settings"))
+
+            if not auth_token:
+                raise ValidationError(_("Twilio Auth Token is empty please check it on settings"))
+
+            if not from_number:
+                raise ValidationError(_("Twilio Mobile Number is empty please check it on settings"))
+            
+            if not to_number:
+                raise ValidationError(_("Mobile Phone is not exist on %s" % (self.citizen_id.name)))
+
+            try:
+                client = Client(account_sid, auth_token)
+
+                from_whatsapp_number = 'whatsapp:%s' % (from_number)
+                to_whatsapp_number = 'whatsapp:%s' % (to_number)
+
+                client.messages.create(
+                    body=message_string,
+                    from_=from_whatsapp_number,
+                    to=to_whatsapp_number
+                )
+            except Exception as e:
+                error_message = str(e)
+                logger.error(error_message)

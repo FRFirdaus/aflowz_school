@@ -19,4 +19,5 @@
 #    DEALINGS IN THE SOFTWARE.
 #
 ########################################################################################
+from . import res_settings
 from . import models

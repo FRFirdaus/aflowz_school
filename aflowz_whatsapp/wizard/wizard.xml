@@ -15,7 +15,8 @@
                         <field name="message"/>
                     </group>
                     <footer>
-                        <button name="send_message" string="Send" type="object"/>
+                        <button name="send_message" string="Send from Whatsapp Web" type="object" icon="fa-whatsapp"/>
+                        <button name="send_direct_msg" string="Send Directly" type="object" icon="fa-whatsapp"/>
                         <button name="cancel" string="Cancel" special="cancel"/>
                     </footer>
                 </form>
