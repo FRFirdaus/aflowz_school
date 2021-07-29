@@ -1,7 +1,13 @@
 # -*- coding: utf-8 -*-
-
 from datetime import datetime
 from odoo import api, fields, models, _
+import json
+import requests
+from odoo.exceptions import ValidationError
+import logging
+from twilio.rest import Client
+
+logger = logging.getLogger()
 
 def get_years():
     year_list = []
@@ -71,7 +77,7 @@ class AflowzAcademicRaport(models.Model):
     def action_confirmed(self):
         for rec in self:
             rec.state = 'done'
-    
+
     def action_set_to_draft(self):
         for rec in self:
             rec.state = 'draft'
@@ -301,6 +307,55 @@ class AflowzRaportPrint(models.Model):
     def action_done(self):
         for rec in self:
             rec.state = 'done'
+            self.auto_send_whatsapp_message()
+
+    def auto_send_whatsapp_message(self):
+        account_sid = str(self.env['ir.config_parameter'].sudo().get_param('twilio.account_sid'))
+        auth_token = str(self.env['ir.config_parameter'].sudo().get_param('twilio.auth_token'))
+        from_number = str(self.env['ir.config_parameter'].sudo().get_param('twilio.mobile'))
+        to_number = self.student_id.mobile
+        whatsapp_message = []
+        message_string = "*Raport %s %s TA %s/%s* \n\n Please Check the following PDF file*"
+        whatsapp_message.append({
+            "media_url": "",
+            "message": message_string
+        })
+
+        # add media url 
+        base_url = base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        media_url = "%s/api/v1/attachment/raport/%s" % (base_url, self.id)
+        whatsapp_message.append({
+            "media_url": media_url,
+            "message": ""
+        })
+
+        if not account_sid:
+            raise ValidationError(_("Twilio Account SID is empty please check it on settings"))
+
+        if not auth_token:
+            raise ValidationError(_("Twilio Auth Token is empty please check it on settings"))
+
+        if not from_number:
+            raise ValidationError(_("Twilio Mobile Number is empty please check it on settings"))
+        
+        if not to_number:
+            raise ValidationError(_("Mobile Phone is not exist on %s" % (self.student_id.name)))
+
+        try:
+            client = Client(account_sid, auth_token)
+            from_whatsapp_number = 'whatsapp:%s' % (from_number)
+            to_whatsapp_number = 'whatsapp:%s' % (to_number)
+
+            for wa_msg in whatsapp_message:
+                client.messages.create(
+                    media_url=[wa_msg.get('media_url')],
+                    body=wa_msg.get('message'),
+                    from_=from_whatsapp_number,
+                    to=to_whatsapp_number
+                )
+        except Exception as e:
+            error_message = str(e)
+            raise ValidationError(_("Failed to send whatsapp message, error: %s" % (error_message)))
     
     def action_set_to_draft(self):
         for rec in self:
