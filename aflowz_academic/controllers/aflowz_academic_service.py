@@ -46,8 +46,8 @@ class Binary(http.Controller):
                 headers={'Content-Type': 'application/json'}
             )
 
-    @http.route('/api/v1/attachment/<int:raport_print_id>/raport', type='http', auth="public", website=True, sitemap=False)
-    def show_report_pdf(self, raport_print_id=0, **kw):
+    @http.route('/api/v1/attachment/<int:raport_print_id>/<raport_name>', type='http', auth="public", website=True, sitemap=False)
+    def show_report_pdf(self, raport_print_id=0, raport_name="Raport", **kw):
         pdf, _ = request.env.ref('aflowz_academic.aflowz_academic_raport').sudo().render_qweb_pdf([raport_print_id])
         pdfhttpheaders = [('Content-Type', 'application/pdf'), ('Content-Length', u'%s' % len(pdf))]
         return request.make_response(pdf, headers=pdfhttpheaders)
