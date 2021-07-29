@@ -349,15 +349,15 @@ class AflowzRaportPrint(models.Model):
 
             for wa_msg in whatsapp_message:
                 client_message = {
-                    "body": wa_msg.get('message'),
                     "from_": from_whatsapp_number,
                     "to": to_whatsapp_number
                 }
                 if wa_msg.get("media_rul"):
                     client_message['media_rul'] = [wa_msg.get('media_url')]
+                
+                if wa_msg.get("message"):
+                    client_message['body'] = wa_msg.get('message')
 
-                print(media_url, "????????????????????????????????")
-                print(client_message, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
                 client.messages.create(**client_message)
         except Exception as e:
             error_message = str(e)
