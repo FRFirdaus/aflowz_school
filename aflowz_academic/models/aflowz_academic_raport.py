@@ -315,7 +315,7 @@ class AflowzRaportPrint(models.Model):
         from_number = str(self.env['ir.config_parameter'].sudo().get_param('twilio.mobile'))
         to_number = self.student_id.mobile
         whatsapp_message = []
-        message_string = "*Raport %s %s TA %s/%s* \n\n Please Check the following PDF file*"
+        message_string = "*Raport %s %s TA %s/%s* \n\n Please Check the following PDF file*" % (self.student_id.name, self.semester, self.start_year, self.end_year)
         whatsapp_message.append({
             "media_url": "",
             "message": message_string
@@ -355,6 +355,9 @@ class AflowzRaportPrint(models.Model):
                 }
                 if wa_msg.get("media_rul"):
                     client_message['media_rul'] = [wa_msg.get('media_url')]
+
+                print(media_url, "????????????????????????????????")
+                print(client_message, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
                 client.messages.create(**client_message)
         except Exception as e:
             error_message = str(e)
