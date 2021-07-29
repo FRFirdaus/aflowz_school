@@ -348,13 +348,14 @@ class AflowzRaportPrint(models.Model):
             to_whatsapp_number = 'whatsapp:%s' % (to_number)
 
             for wa_msg in whatsapp_message:
-                print(wa_msg.get('media_url'), ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-                client.messages.create(
-                    media_url=[wa_msg.get('media_url')],
-                    body=wa_msg.get('message'),
-                    from_=from_whatsapp_number,
-                    to=to_whatsapp_number
-                )
+                client_message = {
+                    "body": wa_msg.get('message'),
+                    "from_": from_whatsapp_number,
+                    "to": to_whatsapp_number
+                }
+                if wa_msg.get("media_rul"):
+                    client_message['media_rul'] = [wa_msg.get('media_url')]
+                client.messages.create(**client_message)
         except Exception as e:
             error_message = str(e)
             raise ValidationError(_("Failed to send whatsapp message, error: %s" % (error_message)))
