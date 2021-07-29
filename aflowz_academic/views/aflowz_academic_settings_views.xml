@@ -7,14 +7,16 @@
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('settings')]" position="inside">
                 <div class="app_settings_block" data-string="Aflowz" string="Aflowz" data-key="aflowz_academic">
-                    <h2>API Static Token</h2>
-                    <div class="row mt16 o_settings_container">
-                        <div class="col-xs-12 col-md-12 o_setting_box">
-                            <div class="o_setting_right_pane">
-                                <div class="content-group">
-                                    <div class="mt16 row">
-                                        <label for="api_static_token" string="API Static Token" class="col-xs-3 col-md-3 o_light_label o_form_label"/>
-                                        <field name="api_static_token" class="font-weight-bold"/>
+                    <div id="api_static_token">
+                        <h2>API Static Token</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-12 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <div class="mt16 row">
+                                            <label for="api_static_token" string="API Static Token" class="col-xs-3 col-md-3 o_light_label o_form_label"/>
+                                            <field name="api_static_token" class="font-weight-bold"/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
