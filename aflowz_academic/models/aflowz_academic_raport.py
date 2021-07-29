@@ -315,7 +315,7 @@ class AflowzRaportPrint(models.Model):
         from_number = str(self.env['ir.config_parameter'].sudo().get_param('twilio.mobile'))
         to_number = self.student_id.mobile
         whatsapp_message = []
-        message_string = "*Raport %s %s TA %s/%s* \n\n Please Check the following PDF file*" % (self.student_id.name, self.semester, self.start_year, self.end_year)
+        message_string = "*Raport %s %s TA %s/%s* \n\nHello amir.. here are your final result on semester %s tahun ajaran %s/%s \n\nPlease Check the following PDF file*" % (self.student_id.name, self.semester, self.start_year, self.end_year, self.semester, self.start_year, self.end_year)
         whatsapp_message.append({
             "media_url": "",
             "message": message_string
@@ -323,7 +323,7 @@ class AflowzRaportPrint(models.Model):
 
         # add media url 
         base_url = base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
-        media_url = "%s/api/v1/attachment/%s/Raport_%s" % (base_url, self.id, self.student_id.name)
+        media_url = "%s/api/v1/attachment/%s/raport_%s_%s" % (base_url, self.id, self.student_id.name, self.name)
         whatsapp_message.append({
             "media_url": media_url,
             "message": ""
