@@ -5,7 +5,7 @@
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//h2[contains(text(),'Users')]" position="before">
+            <xpath expr="//div[@id='api_static_token']" position="before">
                 <div id="whatsapp_setting">
                     <h2>Twilio Whatsapp Settings</h2>
                     <div class="row mt16 o_settings_container">
