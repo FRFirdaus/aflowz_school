@@ -324,6 +324,7 @@ class AflowzRaportPrint(models.Model):
         # add media url 
         base_url = base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         media_url = "%s/api/v1/attachment/raport/%s" % (base_url, self.id)
+        print(media_url, "????????????????????????????????")
         whatsapp_message.append({
             "media_url": media_url,
             "message": ""
@@ -347,6 +348,7 @@ class AflowzRaportPrint(models.Model):
             to_whatsapp_number = 'whatsapp:%s' % (to_number)
 
             for wa_msg in whatsapp_message:
+                print(wa_msg.get('media_url'), ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
                 client.messages.create(
                     media_url=[wa_msg.get('media_url')],
                     body=wa_msg.get('message'),
