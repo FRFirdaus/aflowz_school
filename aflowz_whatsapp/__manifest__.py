@@ -35,7 +35,7 @@
         ],
     'data': [
         'views/view.xml',
-        'views/res_settings_views.xml'
+        'views/res_settings_views.xml',
         'wizard/wizard.xml',
     ],
     'images': ['static/description/icon.png'],
