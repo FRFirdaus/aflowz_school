@@ -334,7 +334,7 @@ class AflowzRaportPrint(models.Model):
         })
 
         # add media url 
-        base_url = base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         report_ref = 'aflowz_academic.aflowz_academic_raport'
         media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, report_ref, self.id, self.student_id.name)
         whatsapp_message.append({
