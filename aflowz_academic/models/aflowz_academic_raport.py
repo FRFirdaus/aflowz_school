@@ -319,6 +319,7 @@ class AflowzRaportPrint(models.Model):
     def action_done(self):
         for rec in self:
             rec.state = 'done'
+            self.env.cr.commit()
             self.auto_send_whatsapp_message()
 
     def auto_send_whatsapp_message(self):
