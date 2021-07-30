@@ -12,6 +12,7 @@ from odoo.http import request
 from odoo.http import content_disposition
 import ast
 import json
+import base64
 
 _logger = logging.getLogger(__name__)
 
