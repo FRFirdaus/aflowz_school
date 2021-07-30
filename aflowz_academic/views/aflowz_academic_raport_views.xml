@@ -139,20 +139,20 @@
         <field name="model">aflowz.raport.print</field>
         <field name="arch" type="xml">
             <form>
-                <div class="oe_button_box" name="button_box">
-                    <button
-                        name="button_preview_pdf"
-                        type="object"
-                        class="oe_stat_button"
-                        icon="fa-eye">
-                    </button>
-                </div>
                 <header>
                     <button name="action_done" string="Validate" class="btn-primary" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
                     <button name="action_set_to_draft" string="Set to Draft" class="btn-primary" type="object" attrs="{'invisible': [('state', '=', 'draft')]}"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="button_preview_pdf"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-eye">
+                        </button>
+                    </div>
                     <div class="oe_title">
                         <label class="oe_edit_only o_form_label" for="name" string="Raport Name"/>
                         <h1><field name="name" readonly="1"/></h1>
