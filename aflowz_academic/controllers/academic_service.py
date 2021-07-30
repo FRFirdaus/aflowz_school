@@ -49,7 +49,7 @@ class Binary(http.Controller):
 
     @http.route('/api/v1/attachment/<report_ref>/<int:raport_print_id>/<raport_name>', type='http', auth="public", website=True, sitemap=False)
     def raport_pdf_file(self, report_ref=None, raport_print_id=0, **kw):
-        if report_ref and report_print_id:
+        if report_ref and raport_print_id:
             pdf, _ = request.env.ref(report_ref).sudo().render_qweb_pdf([raport_print_id])
             return self.return_web_pdf_view(pdf)
 
