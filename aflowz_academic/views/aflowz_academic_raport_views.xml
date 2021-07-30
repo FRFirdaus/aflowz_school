@@ -151,6 +151,7 @@
                             type="object"
                             class="oe_stat_button"
                             icon="fa-eye">
+                            Preview as PDF
                         </button>
                     </div>
                     <div class="oe_title">
