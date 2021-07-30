@@ -19,6 +19,22 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="button_preview_pdf"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-eye">
+                            Preview as PDF
+                        </button>
+                        <button
+                            name="button_preview_answer_pdf"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-eye">
+                            Preview w/ Answer as PDF
+                        </button>
+                    </div>
                     <div class="oe_title">
                         <label class="oe_edit_only o_form_label" for="name" string="Try Out Name"/>
                         <h1><field name="name" placeholder="Try Out Name"/></h1>

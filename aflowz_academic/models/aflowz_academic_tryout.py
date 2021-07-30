@@ -20,6 +20,30 @@ class AflowzAcademicTryout(models.Model):
     major_id = fields.Many2one('aflowz.school.major', required=True)
     origin = fields.Char()
     tryout_line_ids = fields.One2many('aflowz.academic.tryout.line', 'tryout_id')
+
+    def button_preview_pdf(self):
+        base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        report_ref = 'aflowz_academic.aflowz_academic_tryout'
+        media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, report_ref, self.id, self.name)
+        return {                   
+            'name'     : 'Preview Raport',
+            'res_model': 'ir.actions.act_url',
+            'type'     : 'ir.actions.act_url',
+            'target'   : 'new',
+            'url'      : media_url
+        }
+
+    def button_preview_answer_pdf(self):
+        base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        report_ref = 'aflowz_academic.aflowz_academic_tryout_with_answer'
+        media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, report_ref, self.id, self.name)
+        return {                   
+            'name'     : 'Preview Raport',
+            'res_model': 'ir.actions.act_url',
+            'type'     : 'ir.actions.act_url',
+            'target'   : 'new',
+            'url'      : media_url
+        }
     
     def _get_report_tryout_base_filename(self):
         return "%s" % (self.name)
