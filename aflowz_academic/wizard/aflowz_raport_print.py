@@ -114,7 +114,7 @@ class AflowzRaportPrintWizard(models.TransientModel):
                     'final_avg_score': total_final_exam_score
                 })]
             
-            raport_print.action_done()
+            # raport_print.action_done()
             return {
                 'type': 'ir.actions.act_window',
                 'name': 'Raport Document',
