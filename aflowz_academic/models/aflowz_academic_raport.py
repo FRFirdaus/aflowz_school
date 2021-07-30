@@ -288,7 +288,8 @@ class AflowzRaportPrint(models.Model):
     def button_preview_pdf(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         report_ref = 'aflowz_academic.aflowz_academic_raport'
-        media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, report_ref, self.id, self.student_id.name)
+        student_name = self.student_id.name.replace(" ", "_")
+        media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, report_ref, self.id, student_name)
         return {                   
             'name'     : 'Preview Raport',
             'res_model': 'ir.actions.act_url',
@@ -336,7 +337,9 @@ class AflowzRaportPrint(models.Model):
         # add media url 
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         report_ref = 'aflowz_academic.aflowz_academic_raport'
-        media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, report_ref, self.id, self.student_id.name)
+        api/v1/attachment/aflowz_academic.aflowz_academic_raport/7/raport_Rehan
+        student_name = self.student_id.name.replace(" ", "_")
+        media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, report_ref, self.id, student_name)
         whatsapp_message.append({
             "media_url": media_url,
             "message": ""
