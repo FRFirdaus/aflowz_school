@@ -88,7 +88,7 @@
                             <label for="documents" string="Documents"/>
                             <div class="o_address_format">
                                 <field name="documents" filename="document_name" class="o_address_city"/>
-                                <field name="document_name" invisible="1"/>
+                                <field name="document_name" invisible="1" class="o_address_city"/>
                                 <button
                                     name="url_view"
                                     type="object"
