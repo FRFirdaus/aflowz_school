@@ -317,10 +317,9 @@ class AflowzRaportPrint(models.Model):
         return self.display_name
 
     def action_done(self):
-        for rec in self:
-            rec.state = 'done'
-            self.env.cr.commit()
-            self.auto_send_whatsapp_message()
+        self.state = 'done'
+        self.env.cr.commit()
+        self.auto_send_whatsapp_message()
 
     def auto_send_whatsapp_message(self):
         account_sid = str(self.env['ir.config_parameter'].sudo().get_param('twilio.account_sid'))
