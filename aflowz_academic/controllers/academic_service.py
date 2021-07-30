@@ -53,9 +53,9 @@ class Binary(http.Controller):
             pdf, _ = request.env.ref(report_ref).sudo().render_qweb_pdf([raport_print_id])
             return self.return_web_pdf_view(pdf)
 
-    @http.route('/api/v1/chapter/<model_name>/<int:ref_id>/pdf', type='http', auth="public", website=True, sitemap=False)
-    def chapter_pdf_file(self, model_name=None, ref_id=0, **kw):
-        if model_name and ref_id:
+    @http.route('/api/v1/chapter/<model_name>/<int:ref_id>/<view_pdf_name>', type='http', auth="public", website=True, sitemap=False)
+    def chapter_pdf_file(self, model_name=None, ref_id=0, view_pdf_name=None, **kw):
+        if model_name and ref_id and view_pdf_name:
             res_id = request.env[model_name].sudo().browse(ref_id)
             if res_id.documents:
                 docs = res_id.documents
