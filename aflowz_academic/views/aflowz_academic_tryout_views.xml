@@ -24,15 +24,15 @@
                             name="button_preview_pdf"
                             type="object"
                             class="oe_stat_button"
+                            string="Preview as PDF"
                             icon="fa-eye">
-                            Preview as PDF
                         </button>
                         <button
                             name="button_preview_answer_pdf"
                             type="object"
                             class="oe_stat_button"
+                            string="Preview w/ Answer as PDF"
                             icon="fa-eye">
-                            Preview w/ Answer as PDF
                         </button>
                     </div>
                     <div class="oe_title">
