@@ -90,6 +90,17 @@ class AflowzCurriculumLine(models.Model):
     documents = fields.Binary()
     document_name = fields.Char(string="File Name")
 
+    def url_view(self):
+        base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        url = "%s/api/v1/chapter/%s/pdf" % (base_url, self.id)
+        return {                   
+            'name'     : 'Go to website',
+            'res_model': 'ir.actions.act_url',
+            'type'     : 'ir.actions.act_url',
+            'target'   : 'new',
+            'url'      : url
+        }
+
     @api.constrains('chapter')
     def _constrains_chapter_zero(self):
         for rec in self:
