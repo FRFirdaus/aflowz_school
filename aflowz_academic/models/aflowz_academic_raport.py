@@ -355,12 +355,10 @@ class AflowzRaportPrint(models.Model):
             raise ValidationError(_("Mobile Phone is not exist on %s" % (self.student_id.name)))
 
         try:
-            print(whatsapp_message, "?????????????????????????????????????")
             client = Client(account_sid, auth_token)
             from_whatsapp_number = 'whatsapp:%s' % (from_number)
             to_whatsapp_number = 'whatsapp:%s' % (to_number)
 
-            print(whatsapp_message, "?????????????????????????????????????")
             for wa_msg in whatsapp_message:
                 client_message = {
                     "from_": from_whatsapp_number,
@@ -372,7 +370,6 @@ class AflowzRaportPrint(models.Model):
                 if wa_msg.get("message"):
                     client_message['body'] = wa_msg.get('message')
 
-                print(client_message, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
                 client.messages.create(**client_message)
         except Exception as e:
             error_message = str(e)
