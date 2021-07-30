@@ -24,14 +24,14 @@
                             name="button_preview_pdf"
                             type="object"
                             class="oe_stat_button"
-                            string="Preview as PDF"
+                            string="Preview"
                             icon="fa-eye">
                         </button>
                         <button
                             name="button_preview_answer_pdf"
                             type="object"
                             class="oe_stat_button"
-                            string="Preview w/ Answer as PDF"
+                            string="Preview w/ Answer"
                             icon="fa-eye">
                         </button>
                     </div>
