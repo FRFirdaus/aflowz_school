@@ -87,6 +87,8 @@ class AflowzCurriculumLine(models.Model):
         related='curriculum_id.subject_id'
     )
     chapter = fields.Integer(required=True)
+    documents = fields.Binary()
+    document_name = fields.Char(string="File Name")
 
     @api.constrains('chapter')
     def _constrains_chapter_zero(self):
