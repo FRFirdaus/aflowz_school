@@ -140,7 +140,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="action_done" string="Validate" class="btn-primary" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <button name="action_done" confirm="Are you sure you want to validate this?" string="Validate" class="btn-primary" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
                     <button name="action_set_to_draft" string="Set to Draft" class="btn-primary" type="object" attrs="{'invisible': [('state', '=', 'draft')]}"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
                 </header>
