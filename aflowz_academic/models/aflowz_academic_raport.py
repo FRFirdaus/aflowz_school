@@ -288,7 +288,7 @@ class AflowzRaportPrint(models.Model):
     def button_preview_pdf(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         report_print_raport = 'aflowz_academic.aflowz_academic_raport'
-        media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, self._name, self.id, self.student_id.name)
+        media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, report_print_raport, self.id, self.student_id.name)
         return {                   
             'name'     : 'Preview Raport',
             'res_model': 'ir.actions.act_url',
