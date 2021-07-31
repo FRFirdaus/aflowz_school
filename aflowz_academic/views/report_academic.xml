@@ -100,16 +100,36 @@
                                 </div>
                             </td>
                             <td>
-                                <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('homework.percentage')+ '%'"/>
+                                <div t-if="request.env['ir.config_parameter'].sudo().get_param('homework.percentage') and request.env['ir.config_parameter'].sudo().get_param('homework.percentage') > 0">
+                                    <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('homework.percentage') + '%'"/>
+                                </div>
+                                <div t-if="not request.env['ir.config_parameter'].sudo().get_param('homework.percentage')">
+                                    <p class="m-0" t-esc="'0%'"/>
+                                </div>
                             </td>
                             <td>
-                                <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('daily.task.percentage')+ '%'"/>
+                                <div t-if="request.env['ir.config_parameter'].sudo().get_param('daily.task.percentage') and request.env['ir.config_parameter'].sudo().get_param('daily.task.percentage') > 0">
+                                    <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('daily.task.percentagee') + '%'"/>
+                                </div>
+                                <div t-if="not request.env['ir.config_parameter'].sudo().get_param('daily.task.percentage')">
+                                    <p class="m-0" t-esc="'0%'"/>
+                                </div>
                             </td>
                             <td>
-                                <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('mid.exam.percentage') + '%'"/>
+                                <div t-if="request.env['ir.config_parameter'].sudo().get_param('mid.exam.percentage') and request.env['ir.config_parameter'].sudo().get_param('mid.exam.percentage') > 0">
+                                    <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('mid.exam.percentage') + '%'"/>
+                                </div>
+                                <div t-if="not request.env['ir.config_parameter'].sudo().get_param('mid.exam.percentage')">
+                                    <p class="m-0" t-esc="'0%'"/>
+                                </div>
                             </td>
                             <td>
-                                <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('final.exam.percentage') + '%'"/>
+                                <div t-if="request.env['ir.config_parameter'].sudo().get_param('final.exam.percentage') and request.env['ir.config_parameter'].sudo().get_param('final.exam.percentage') > 0">
+                                    <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('final.exam.percentage') + '%'"/>
+                                </div>
+                                <div t-if="not request.env['ir.config_parameter'].sudo().get_param('final.exam.percentage')">
+                                    <p class="m-0" t-esc="'0%'"/>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
