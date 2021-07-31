@@ -92,7 +92,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('absence.percentage') + '%'"/>
+                                <p class="m-0" t-esc="str(request.env['ir.config_parameter'].sudo().get_param('absence.percentage')) + '%'"/>
                             </td>
                             <td>
                                 <p class="m-0" t-esc="request.env['ir.config_parameter'].sudo().get_param('homework.percentage')+ '%'"/>
