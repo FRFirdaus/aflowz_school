@@ -333,9 +333,9 @@ class AflowzRaportPrint(models.Model):
         return self.display_name
 
     def action_done(self):
-        self.state = 'done'
         self.auto_send_whatsapp_message()
-
+        self.state = 'done'
+        
     def auto_send_whatsapp_message(self):
         account_sid = str(self.env['ir.config_parameter'].sudo().get_param('twilio.account_sid'))
         auth_token = str(self.env['ir.config_parameter'].sudo().get_param('twilio.auth_token'))
