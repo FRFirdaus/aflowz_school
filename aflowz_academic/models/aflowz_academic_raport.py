@@ -300,7 +300,7 @@ class AflowzRaportPrint(models.Model):
             base_url, 
             report_ref, 
             self.id, 
-            raport_pdf_name.replace(" ", "%20")
+            raport_pdf_name.replace(" ", "%20").replace("|", "%7")
         )
 
     def button_preview_pdf(self):
