@@ -285,7 +285,7 @@ class AflowzRaportPrint(models.Model):
     mid_percentage = fields.Char(readonly=True)
     final_percentage = fields.Char(readonly=True)
 
-    def button_preview_pdf(self):
+    def generate_raport_url(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         report_ref = 'aflowz_academic.aflowz_academic_raport'
         raport_pdf_name = "Raport %s Kelas %s %s %s TA %s|%s" % (
@@ -296,7 +296,15 @@ class AflowzRaportPrint(models.Model):
             self.start_year,
             self.end_year
         )
-        media_url = "%s/api/v1/attachment/%s/%s/%s" % (base_url, report_ref, self.id, raport_pdf_name.replace(" ", "%20"))
+        return "%s/api/v1/attachment/%s/%s/%s" % (
+            base_url, 
+            report_ref, 
+            self.id, 
+            raport_pdf_name.replace(" ", "%20")
+        )
+
+    def button_preview_pdf(self):
+        media_url = self.generate_raport_url()
         return {                   
             'name'     : 'Preview Raport',
             'res_model': 'ir.actions.act_url',
@@ -326,7 +334,6 @@ class AflowzRaportPrint(models.Model):
 
     def action_done(self):
         self.state = 'done'
-        self.env.cr.commit()
         self.auto_send_whatsapp_message()
 
     def auto_send_whatsapp_message(self):
@@ -343,17 +350,7 @@ class AflowzRaportPrint(models.Model):
         })
 
         # add media url 
-        base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
-        report_ref = 'aflowz_academic.aflowz_academic_raport'
-        raport_pdf_name = "Raport %s Kelas %s %s %s TA %s|%s" % (
-            self.student_id.name,
-            self.grade_id.name,
-            self.major_id.name,
-            str(self.semester).capitalize(),
-            self.start_year,
-            self.end_year
-        )
-        media_url = "%s/api/v1/attachment/%s/%s/%s" % (base_url, report_ref, self.id, raport_pdf_name.replace(" ", "%20"))
+        media_url = self.generate_raport_url()
         whatsapp_message.append({
             "media_url": media_url,
             "message": ""
