@@ -120,11 +120,11 @@
                     <thead>
                         <tr class="active" style="background-color:#893b74 !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
                             <th width="200px">Subject</th>
-                            <th width="100px" class="text-right">Homework</th>
-                            <th width="100px" class="text-right">Task</th>
-                            <th width="100px" class="text-right">Mid-Exam</th>
-                            <th width="100px" class="text-right">Final-Exam</th>
-                            <th width="100px" class="text-right">Avg Score</th>
+                            <th width="100px" class="text-center" style="color: white">Homework</th>
+                            <th width="100px" class="text-center" style="color: white">Task</th>
+                            <th width="100px" class="text-center" style="color: white">Mid-Exam</th>
+                            <th width="100px" class="text-center" style="color: white">Final-Exam</th>
+                            <th width="100px" class="text-center" style="color: white">Avg Score</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -207,7 +207,7 @@
                                 </td>
                             </tr>
                             <tr class="border-black o_subtotal" style="">
-                                <td style="background-color:#893b74 !important;color:#FFF !important;"><strong>Total Average Score:</strong></td>
+                                <td style="background-color:#893b74 !important;color:#FFF !important;"><strong style="color:#FFF">Total Average Score:</strong></td>
                                 <td class="text-right" style="background-color:#893b74 !important;color:#FFF !important;">
                                     <span t-field="doc.total_avg_score"/>
                                 </td>
