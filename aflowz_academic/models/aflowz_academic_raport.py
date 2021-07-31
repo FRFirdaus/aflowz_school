@@ -300,7 +300,7 @@ class AflowzRaportPrint(models.Model):
             base_url, 
             report_ref, 
             self.id, 
-            raport_pdf_name.replace(" ", "%20").replace("|", "%7")
+            raport_pdf_name.replace(" ", "%20")
         )
 
     def button_preview_pdf(self):
@@ -352,7 +352,7 @@ class AflowzRaportPrint(models.Model):
         # add media url 
         media_url = self.generate_pdf_url()
         whatsapp_message.append({
-            "media_url": media_url,
+            "media_url": media_url.replace("%20", "_").replace("|", "_"),
             "message": ""
         })
 
