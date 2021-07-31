@@ -288,7 +288,7 @@ class AflowzRaportPrint(models.Model):
     def button_preview_pdf(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         report_ref = 'aflowz_academic.aflowz_academic_raport'
-        raport_pdf_name = "Raport %s Kelas %s-%s %s TA %s/%s" % (
+        raport_pdf_name = "Raport %s Kelas %s %s %s TA %s|%s" % (
             self.student_id.name,
             self.grade_id.name,
             self.major_id.name,
