@@ -289,7 +289,8 @@ class AflowzRaportPrint(models.Model):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         report_ref = 'aflowz_academic.aflowz_academic_raport'
         student_name = self.student_id.name
-        media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, report_ref, self.id, student_name.replace(" ", "_"))
+        raport_header = "Raport%20"
+        media_url = "%s/api/v1/attachment/%s/%s/%s%s" % (base_url, report_ref, self.id, raport_header, student_name.replace(" ", "%20"))
         return {                   
             'name'     : 'Preview Raport',
             'res_model': 'ir.actions.act_url',
