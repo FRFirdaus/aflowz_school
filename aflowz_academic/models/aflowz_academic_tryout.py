@@ -24,7 +24,7 @@ class AflowzAcademicTryout(models.Model):
     def button_preview_pdf(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         report_ref = 'aflowz_academic.aflowz_academic_tryout'
-        media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, report_ref, self.id, self.name)
+        media_url = "%s/api/v1/attachment/%s/%s/%s" % (base_url, report_ref, self.id, str(self.name).replace(" ", "%20"))
         return {                   
             'name'     : 'Preview Raport',
             'res_model': 'ir.actions.act_url',
@@ -36,7 +36,7 @@ class AflowzAcademicTryout(models.Model):
     def button_preview_answer_pdf(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         report_ref = 'aflowz_academic.aflowz_academic_tryout_with_answer'
-        media_url = "%s/api/v1/attachment/%s/%s/raport_%s" % (base_url, report_ref, self.id, self.name)
+        media_url = "%s/api/v1/attachment/%s/%s/%s" % (base_url, report_ref, self.id, str(self.name).replace(" ", "%20"))
         return {                   
             'name'     : 'Preview Raport',
             'res_model': 'ir.actions.act_url',

@@ -92,8 +92,13 @@ class AflowzCurriculumLine(models.Model):
 
     def url_view(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
-        display_name = self.display_name
-        url = "%s/api/v1/chapter/%s/%s/%s" % (base_url, self._name, self.id, display_name.replace(" ", "%20"))
+        raport_pdf_name = "Materi Pembelajaran %s|BAB %s|%s" % (self.curriculum_id.name, self.chapter, self.name)
+        url = "%s/api/v1/chapter/%s/%s/%s" % (
+            base_url,
+            self._name,
+            self.id,
+            raport_pdf_name.replace(" ", "%20")
+        )
         return {                   
             'name'     : 'Go to website',
             'res_model': 'ir.actions.act_url',
