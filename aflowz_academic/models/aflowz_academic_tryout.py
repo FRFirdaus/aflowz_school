@@ -21,9 +21,8 @@ class AflowzAcademicTryout(models.Model):
     origin = fields.Char()
     tryout_line_ids = fields.One2many('aflowz.academic.tryout.line', 'tryout_id')
 
-    def button_preview_pdf(self):
+    def open_pdf_action(self, report_ref):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
-        report_ref = 'aflowz_academic.aflowz_academic_tryout'
         media_url = "%s/api/v1/attachment/%s/%s/%s" % (base_url, report_ref, self.id, str(self.name).replace(" ", "%20"))
         return {                   
             'name'     : 'Preview Raport',
@@ -33,17 +32,13 @@ class AflowzAcademicTryout(models.Model):
             'url'      : media_url
         }
 
+    def button_preview_pdf(self):
+        report_ref = 'aflowz_academic.aflowz_academic_tryout'
+        return self.open_pdf_action(report_ref)
+
     def button_preview_answer_pdf(self):
-        base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         report_ref = 'aflowz_academic.aflowz_academic_tryout_with_answer'
-        media_url = "%s/api/v1/attachment/%s/%s/%s" % (base_url, report_ref, self.id, str(self.name).replace(" ", "%20"))
-        return {                   
-            'name'     : 'Preview Raport',
-            'res_model': 'ir.actions.act_url',
-            'type'     : 'ir.actions.act_url',
-            'target'   : 'new',
-            'url'      : media_url
-        }
+        return self.open_pdf_action(report_ref)
     
     def _get_report_tryout_base_filename(self):
         return "%s" % (self.name)

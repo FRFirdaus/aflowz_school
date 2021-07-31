@@ -285,7 +285,7 @@ class AflowzRaportPrint(models.Model):
     mid_percentage = fields.Char(readonly=True)
     final_percentage = fields.Char(readonly=True)
 
-    def generate_raport_url(self):
+    def generate_pdf_url(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         report_ref = 'aflowz_academic.aflowz_academic_raport'
         raport_pdf_name = "Raport %s Kelas %s %s %s TA %s|%s" % (
@@ -304,7 +304,7 @@ class AflowzRaportPrint(models.Model):
         )
 
     def button_preview_pdf(self):
-        media_url = self.generate_raport_url()
+        media_url = self.generate_pdf_url()
         return {                   
             'name'     : 'Preview Raport',
             'res_model': 'ir.actions.act_url',
@@ -350,7 +350,7 @@ class AflowzRaportPrint(models.Model):
         })
 
         # add media url 
-        media_url = self.generate_raport_url()
+        media_url = self.generate_pdf_url()
         whatsapp_message.append({
             "media_url": media_url,
             "message": ""
