@@ -296,7 +296,7 @@ class AflowzRaportPrint(models.Model):
             self.start_year,
             self.end_year
         )
-        media_url = "%s/api/v1/attachment/%s/%s/%s%s" % (base_url, report_ref, self.id, raport_header, raport_pdf_name.replace(" ", "%20"))
+        media_url = "%s/api/v1/attachment/%s/%s/%s" % (base_url, report_ref, self.id, raport_pdf_name.replace(" ", "%20"))
         return {                   
             'name'     : 'Preview Raport',
             'res_model': 'ir.actions.act_url',
