@@ -119,7 +119,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr class="active" style="background-color:#893b74 !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
-                            <th width="200px">Subject</th>
+                            <th width="200px" style="color: white">Subject</th>
                             <th width="100px" class="text-center" style="color: white">Homework</th>
                             <th width="100px" class="text-center" style="color: white">Task</th>
                             <th width="100px" class="text-center" style="color: white">Mid-Exam</th>
